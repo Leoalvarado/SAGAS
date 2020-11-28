@@ -1,6 +1,7 @@
 import './App.css';
 
 import Login from './cmps/public/Login';
+import Footer from './cmps/public/Footer';
 
 function App() {
   return (
