@@ -19,13 +19,25 @@
     margin: 6px;
 
 }
+.loginsection .iconlog{
 
+    left: 45px;
+    position: absolute;
 
+}
+.loginsection .iconkey{
+
+    left: 45px;
+    position: absolute;
+
+}
 input{
     padding:0.9em 2em 1em;
     border: 1px solid rgb(83, 12, 150);
     border-radius: 5px;
     box-shadow: 1px 1px 3px #222;
+    left: 4px;
+    top: 6px;
   }
 
 .loginsection button{

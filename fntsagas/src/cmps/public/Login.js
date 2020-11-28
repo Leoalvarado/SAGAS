@@ -1,5 +1,6 @@
 import {useState} from 'react';
-
+import {BiUser}from 'react-icons/bi'
+import {BiKey}from 'react-icons/bi'
 import Page from '../cmns/Page';
 import "./Login.css";
 
@@ -43,9 +44,15 @@ const Login = ()=>{
            <section className="loginsection">
             <div className="Cajalogin">   
             <div>
-            <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
+                <div className="iconlog" >
+                    <BiUser  size="2em"></BiUser>
+                </div>
+                <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
             </div>
             <div>
+                <div className="iconkey" >
+                        <BiKey  size="2em"></BiKey>
+                </div>
             <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
             </div>
            <button onClick={onLogin}>Iniciar Sesión</button>
