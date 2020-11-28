@@ -1,0 +1,18 @@
+.loginsection{
+    width: 100;
+    align-self:center;
+    justify-self: center;
+    margin-bottom: 5em;
+    margin-top: 55vh;
+}
+
+.loginsection button{
+    box-sizing: border-box;
+    border: 1px solid rgb(83, 12, 150);
+    background-color: rgba(255, 255, 255, 0.486);
+    border-radius: 12px;
+    padding:1em 2em;
+    box-shadow: 1px 1px 3px #333;
+    margin: 1em;
+    font-weight: bold;
+}

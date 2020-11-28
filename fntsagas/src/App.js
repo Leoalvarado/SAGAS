@@ -1,18 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
-import Page from './cmps/Page';
+
+import Home from './cmps/public/Home';
 
 
 function App() {
   return (
         <div className="App">
-          <Page heading="PAGINA ABC">
-
-
-
-
-
-          </Page>
+         <Home/>
         </div>
       );
 }
