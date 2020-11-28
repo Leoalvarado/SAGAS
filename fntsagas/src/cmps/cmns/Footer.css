@@ -1,7 +1,7 @@
 footer {
     box-sizing: border-box;
     display: flex;
-    background-color: #303F9F;
+    background-color: rgba(57, 19, 107, 0.842);
     color: #fff;
     position: fixed;
     left:0px;

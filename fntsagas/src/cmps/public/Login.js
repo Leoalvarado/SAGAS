@@ -40,7 +40,7 @@ const Login = ()=>{
     }
 
     return(
-        <Page heading="Iniciar Sesion">
+        <Page heading="Iniciar Sesion" footer={true}>
            <section className="loginsection">
             <div className="Cajalogin">   
             <div>
@@ -53,7 +53,7 @@ const Login = ()=>{
                 <div className="iconkey" >
                         <BiKey  size="2em"></BiKey>
                 </div>
-            <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
+              <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
             </div>
            <button onClick={onLogin}>Iniciar Sesión</button>
            </div>

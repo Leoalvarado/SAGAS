@@ -8,7 +8,7 @@
 }
 .loginsection .Cajalogin{
     box-sizing: border-box;
-    height: 220px;
+    height: 275px;
     width: 380px;
     padding:1.9em 2em 1em;
     background-color: rgba(57, 19, 107, 0.842);
@@ -21,14 +21,18 @@
 }
 .loginsection .iconlog{
 
-    left: 45px;
-    position: absolute;
+    left: -145px;
+    top: 45px;
+    position: relative;
 
 }
 .loginsection .iconkey{
 
-    left: 45px;
-    position: absolute;
+    left: -145px;
+    top: 40px;
+    position: relative;
+    margin:0px;
+    padding: 0px;
 
 }
 input{
