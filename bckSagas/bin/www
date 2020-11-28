@@ -3,7 +3,26 @@
 /**
  * Module dependencies.
  */
+require('dotenv').config();
 
+ //Coneccion base de datos
+ var MongoDB = require('../models/dbm');
+
+//SEGUN OJBA Mi preferido es esta.
+(async ()=>{
+try{
+  var db = await MongoDB.getDb();
+  if(db){
+    console.log("Conectado a la Base de Datos");
+    start();
+  }
+}catch(ex){
+  console.log(ex);
+  process.exit(1);
+}
+})().catch((ex)=>{console(ex)}); 
+
+function start(){
 var app = require('../app');
 var debug = require('debug')('bcksagas:server');
 var http = require('http');
@@ -87,4 +106,5 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+}
 }
