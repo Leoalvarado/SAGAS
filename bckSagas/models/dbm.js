@@ -19,4 +19,4 @@ module.exports = class MongoDBModel {
       return db;
     }
   }
-}
+} 

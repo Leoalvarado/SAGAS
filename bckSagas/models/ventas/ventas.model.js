@@ -1,7 +1,7 @@
 var MongoDB = require('../dbm');
 var ObjectID = require('mongodb').ObjectID;
 
-class VentasModel{
+class ventasModel{
     constructor(){
         this.collection = null
         MongoDB.getDb()
@@ -35,4 +35,4 @@ class VentasModel{
         }
     }
 }
-module.exports = VentasModel;
+module.exports = ventasModel;

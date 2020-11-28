@@ -25,6 +25,15 @@ class VentasModel{
         }
     }
 
+    async getProductosAll(){
+        try {
+            let rslt = await this.collection.find({}).toArray();
+            return rslt;
+        } catch (ex) {
+            throw(ex);
+        }
+    }
+
     //metodos post
     async addProducto(document){
         try {
@@ -39,7 +48,7 @@ class VentasModel{
         try {
             const _id = new ObjectID(id);
             const updOps = {"$set": {"precio" : precio}};
-            let updDoc = await this.collection.findOneAndUpdate({_id}, updDoc, {returnedOriginal: false});
+            let updDoc = await this.collection.findOneAndUpdate({_id}, updOps, {returnOriginal:false});
             return updDoc;
         } catch (ex) {
             throw(ex);
