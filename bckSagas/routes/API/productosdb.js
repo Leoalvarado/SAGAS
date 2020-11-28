@@ -1,14 +1,14 @@
 const express = require("express");
 let router = express.Router();
 
-let ventasModel = require('../../models/ventas/ventas.model');
-const mdbVentasModel = new ventasModel();
+let productosModel = require('../../models/productos/productos.model');
+const mdbProductosModel = new ventasModel();
 
 
 router.get('/productoCategoria/:categoria', async (req, res)=>{
     try {
         let { categoria } = req.params;
-        let rsltset = await mdbVentasModel.getByDate({categoria: categoria});
+        let rsltset = await mdbProductosModel.getProductoPorCategoria({categoria: categoria});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
@@ -21,7 +21,7 @@ router.post('nuevoProducto', async (res, req)=>{
         let {sku, name, categoria, precio, stock} = req.body;
         precio = Number(price);
         stock = Number(stock);
-        var rsltset = await mdbVentasModel.addVenta({sku, name, categoria, precio, stock});
+        var rsltset = await mdbVentasModel.addProducto({sku, name, categoria, precio, stock});
     } catch (ex) {
         console.log(ex);
         res.status(500).json({"msg":"Algo Paso Mal."});
