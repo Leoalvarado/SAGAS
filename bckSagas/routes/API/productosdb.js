@@ -28,4 +28,16 @@ router.post('nuevoProducto', async (res, req)=>{
     }
 }); 
 
+router.put('actualizarPrecioProducto', async (res, req)=>{
+    try {
+        let {sku , precio} = req.body;
+        precio = Number(precio);
+        let rsltset = await mdbVentasModel.updateProductoXId({sku, precio});
+        res.status(200).json(rsltset);
+    } catch (ex) {
+        console.log(ex);
+        res.status(500).json({"msg":"Algo Paso Mal."});
+    }
+});
+
 module.exports = router;
