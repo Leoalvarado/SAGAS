@@ -5,10 +5,10 @@ let ventasModel = require('../../models/ventas/ventas.model');
 const mdbVentasModel = new ventasModel();
 
 
-router.get('/ventas/:date', async (req, res)=>{
+router.get('/productoCategoria/:categoria', async (req, res)=>{
     try {
-        let { date } = req.params;
-        let rsltset = await mdbVentasModel.getByDate({Date:date});
+        let { categoria } = req.params;
+        let rsltset = await mdbVentasModel.getByDate({categoria: categoria});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
@@ -16,12 +16,12 @@ router.get('/ventas/:date', async (req, res)=>{
     }
 }); 
 
-router.post('new', async (res, req)=>{
+router.post('nuevoProducto', async (res, req)=>{
     try {
-        let {date, name, category ,precio, stock=0} = req.body;
-        price = Number(price);
+        let {sku, name, categoria, precio, stock} = req.body;
+        precio = Number(price);
         stock = Number(stock);
-        var rsltset = await mdbVentasModel.addVenta({date, name, category, precio, cantidad});
+        var rsltset = await mdbVentasModel.addVenta({sku, name, categoria, precio, stock});
     } catch (ex) {
         console.log(ex);
         res.status(500).json({"msg":"Algo Paso Mal."});
