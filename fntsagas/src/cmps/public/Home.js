@@ -10,7 +10,7 @@ const Home = ()=>{
         return(<Redirect to={redirect}></Redirect>);
     }
     return(
-        <Page heading="Bienvenidos">
+        <Page heading="Bienvenidos" footer={true}>
            <section className="loginsection">
 
             <button onClick={(e)=>{setRedirect("/login")}}>Iniciar Sesión</button>
