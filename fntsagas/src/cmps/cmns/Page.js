@@ -1,4 +1,6 @@
 import Header from "./Header";
+import Footer from "./Footer";
+
 import "./Page.css";
 const Page=({children, heading})=>{
     return(
