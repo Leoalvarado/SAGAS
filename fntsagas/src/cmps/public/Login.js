@@ -42,14 +42,12 @@ const Login = ()=>{
         <Page heading="Iniciar Sesion">
            <section className="loginsection">
             <div>
-            <input type="text" name="Email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
+            <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
             </div>
             <div>
-            <input type="password" name="Pswd" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
+            <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
             </div>
-           <button onClick={onLogin}>Iniciar Sesion</button>
-            
-
+           <button onClick={onLogin}>Iniciar Sesión</button>
            </section>
 
         </Page>
