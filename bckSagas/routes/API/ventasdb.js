@@ -18,10 +18,10 @@ router.get('/ventas/:date', async (req, res)=>{
 
 router.post('new', async (res, req)=>{
     try {
-        let {date, name, category ,price, stock=0} = req.body;
+        let {date, name, category ,precio, stock=0} = req.body;
         price = Number(price);
         stock = Number(stock);
-        var rsltset = await mdbVentasModel.addVenta({date, name, category, price, stock});
+        var rsltset = await mdbVentasModel.addVenta({date, name, category, precio, cantidad});
     } catch (ex) {
         console.log(ex);
         res.status(500).json({"msg":"Algo Paso Mal."});
