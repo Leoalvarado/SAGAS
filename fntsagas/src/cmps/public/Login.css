@@ -6,8 +6,18 @@
     margin-top: 36vh;
     
 }
+.loginsection .Cajalogin{
+    box-sizing: border-box;
+    height: 220px;
+    width: 380px;
+    padding:1.9em 2em 1em;
+    background-color: rgba(57, 19, 107, 0.842);
+    border-radius: 7px;
+
+}
 .loginsection div{
     margin: 6px;
+
 }
 
 
@@ -21,10 +31,10 @@ input{
 .loginsection button{
     box-sizing: border-box;
     border: 1px solid rgb(83, 12, 150);
-    background-color: rgba(255, 255, 255, 0.486);
+    background-color: rgba(255, 247, 247, 0.925);
     border-radius: 12px;
     padding:1em 2em;
-    box-shadow: 1px 1px 3px #333;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
     margin: 1em;
     font-weight: bold;
 }

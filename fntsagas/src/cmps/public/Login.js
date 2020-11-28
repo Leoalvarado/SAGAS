@@ -41,6 +41,7 @@ const Login = ()=>{
     return(
         <Page heading="Iniciar Sesion">
            <section className="loginsection">
+            <div className="Cajalogin">   
             <div>
             <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
             </div>
@@ -48,7 +49,9 @@ const Login = ()=>{
             <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
             </div>
            <button onClick={onLogin}>Iniciar Sesión</button>
+           </div>
            </section>
+
 
         </Page>
     )
