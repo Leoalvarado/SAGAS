@@ -1,12 +1,12 @@
 import './App.css';
 
-import Home from './cmps/public/Home';
+import Login from './cmps/public/Login';
 
 
 function App() {
   return (
         <div className="App">
-         <Home/>
+         <Login/>
         </div>
       );
 }
