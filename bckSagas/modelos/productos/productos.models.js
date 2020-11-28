@@ -26,10 +26,21 @@ class VentasModel{
     }
 
     //metodos post
-    async addProdcto(document){
+    async addProducto(document){
         try {
             var result = await this.collection.insertOne(document);
             return result;
+        } catch (ex) {
+            throw(ex);
+        }
+    }
+    
+     async updateProductoXId(id, precio){
+        try {
+            const _id = new ObjectID(id);
+            const updOps = {"$set": {"precio" : precio}};
+            let updDoc = await this.collection.findOneAndUpdate({_id}, updDoc, {returnedOriginal: false});
+            return updDoc;
         } catch (ex) {
             throw(ex);
         }
