@@ -29,12 +29,7 @@ const productosRoutes = require('./api/productosdb');
 
 
 router.use('/seguridad', seguridadRoutes)
-<<<<<<< HEAD
-router.use('/ventas',jwtAuthMiddleware, ventasRoutes)
-router.use('/productos', jwtAuthMiddleware, productosRoutes)
-=======
 router.use('/ventas',/*jwtAuthMiddleware,*/ ventasRoutes)
 router.use('/productos', /*jwtAuthMiddleware,*/ productosRoutes)
 
->>>>>>> 1495310575440b75b8429169a54e74000ea27605
 module.exports = router;
