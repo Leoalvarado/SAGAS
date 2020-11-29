@@ -43,6 +43,30 @@ class VentasModel{
             throw(ex);
         }
     }
+
+    async addcategoriaProducto(id, categoria){
+        try {
+            let _categoria = categoria.toLowerCase();
+            const updOps = {"$addToSet": { categoria: _categoria }};
+            const _id = new ObjectID(id);
+            let updDoc = await this.collection.findOneAndUpdate({_id}, updOps, {returnOriginal:false});
+            return updDoc;
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
+
+    async deletecategoriaProducto(id, categoria){
+        try {
+            let _categoria = categoria.toLowerCase();
+            const updOps = {"$pull": { categoria: _categoria }};
+            const _id = new ObjectID(id);
+            let updDoc = await this.collection.findOneAndUpdate({_id}, updOps, {returnOriginal:false});
+            return updDoc;
+        } catch (ex) {
+            console.log(ex);
+        }
+    }
     
      async updateProductoXId(id, precio){
         try {

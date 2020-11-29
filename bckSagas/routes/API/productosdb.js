@@ -28,16 +28,40 @@ router.get('/productosAll', async (req, res)=>{
 
 router.post('/nuevoProducto', async (req, res)=>{
     try {
-        let {sku, name, categoria, precio, stock=0} = req.body;
+        let {sku, nombre, precio, stock=0} = req.body;
         precio = Number(precio);
         stock = Number(stock);
-        var rsltset = await mdbProductosModel.addProducto({sku, name, categoria, precio, stock});
+        var rsltset = await mdbProductosModel.addProducto({sku, nombre, precio, stock});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
         res.status(500).json({"msg":"Algo Paso Mal."});
     }
 }); 
+
+router.put('/agregarCategoriaProducto/:id',  async(req, res)=>{
+    try {
+        let { id } = req.params;
+        let { categoria } = req.body;
+        let rsltset = await mdbProductosModel.addcategoriaProducto(id, categoria);
+        res.status(200).json(rsltset);
+    } catch (ex) {
+        console.log(ex);
+        res.status(500).json({"msg":"Algo Paso Mal."});
+    }
+});
+
+router.put('/eliminarCategoriaProducto/:id',  async(req, res)=>{
+    try {
+        let { id } = req.params;
+        let { categoria } = req.body;
+        let rsltset = await mdbProductosModel.deletecategoriaProducto(id, categoria);
+        res.status(200).json(rsltset);
+    } catch (ex) {
+        console.log(ex);
+        res.status(500).json({"msg":"Algo Paso Mal."});
+    }
+});
 
 router.put('/actualizarPrecioProducto/:id', async (req, res)=>{
     try {
