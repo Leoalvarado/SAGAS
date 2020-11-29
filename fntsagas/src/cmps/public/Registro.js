@@ -5,7 +5,7 @@ import Page from '../cmns/Page';
 import "./Registro.css";
 
 
-const Login = ()=>{
+const Registro = ()=>{
     //const [email,setEmail]=useState("");
     //const [pswd,setPassword]=useState("");
 // AGREGAR NOMBRE, TELEFONO
@@ -37,7 +37,9 @@ const Login = ()=>{
     //capturamos los datos del formulario
     const onLogin = (e)=>{
             const{nombre,apellido,tel,email,password}=form;
-
+            console.log(nombre);
+            console.log(apellido);
+            console.log(tel);
             console.log(email);
             console.log(password);
     }
