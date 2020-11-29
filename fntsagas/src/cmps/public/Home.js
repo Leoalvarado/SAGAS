@@ -14,7 +14,7 @@ const Home = ()=>{
            <section className="loginsection">
 
             <button onClick={(e)=>{setRedirect("/login")}}>Iniciar Sesión</button>
-            <button onClick={(e)=>{setRedirect("/singin")}}>Registrarse</button>
+            <button onClick={(e)=>{setRedirect("/register")}}>Registrarse</button>
 
            </section>
 
