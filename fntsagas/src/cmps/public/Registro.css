@@ -1,0 +1,58 @@
+.loginsection{
+    width: 100;
+    align-self:center;
+    justify-self: center;
+    margin-bottom: 5em;
+    margin-top: 36vh;
+    
+}
+.loginsection .Cajalogin{
+    box-sizing: border-box;
+    height: 275px;
+    width: 320px;
+    padding:1.9em 2em 1em;
+    background-color: rgba(57, 19, 107, 0.842);
+    border-radius: 7px;
+    top: -145px;
+    position: relative;
+
+}
+.loginsection div{
+    margin: 6px;
+
+}
+.loginsection .iconlog{
+
+    left: -135px;
+    top: 45px;
+    position: relative;
+
+}
+.loginsection .iconkey{
+
+    left: -135px;
+    top: 40px;
+    position: relative;
+    margin:0px;
+    padding: 0px;
+
+}
+input{
+    padding:0.9em 2em 1em;
+    border: 1px solid rgb(83, 12, 150);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #222;
+    left: 4px;
+    top: 6px;
+  }
+
+.loginsection button{
+    box-sizing: border-box;
+    border: 1px solid rgb(83, 12, 150);
+    background-color: rgba(255, 247, 247, 0.925);
+    border-radius: 12px;
+    padding:1em 2em;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+    margin: 1em;
+    font-weight: bold;
+}
