@@ -46,7 +46,7 @@ const Registro = ()=>{
 
     return(
         <Page heading="Registrarse" footer={true}>
-           <section className="loginsection">
+           <section className="registerSection">
             <div className="Cajalogin">
                 <h2>Ingresa tus Datos Aquí</h2>
             <div className="t1">

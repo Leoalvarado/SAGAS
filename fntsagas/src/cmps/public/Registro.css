@@ -1,4 +1,4 @@
-.loginsection{
+.registerSection{
     width: 100;
     align-self:center;
     justify-self: center;
@@ -6,11 +6,11 @@
     margin-top: 36vh;
     
 }
-.loginsection h2{
+.registerSection h2{
     margin-top:  2px;
     color:#fff
 }
-.loginsection .Cajalogin{
+.registerSection .Cajalogin{
     box-sizing: border-box;
     height: 420px;
     width: 320px;
@@ -21,11 +21,11 @@
     position: relative;
 
 }
-.loginsection div{
+.registerSection div{
     margin: 3px;
 
 }
-.loginsection .iconlog{
+.registerSection .iconlog{
 
     left: -135px;
     top: 45px;
@@ -33,7 +33,7 @@
     color: #fff;
 
 }
-.loginsection .iconkey{
+.registerSection .iconkey{
 
     left: -135px;
     top: 40px;
@@ -43,7 +43,7 @@
 }
 
 
-.loginsection .icontel{
+.registerSection .icontel{
 
     left: -135px;
     top: 40px;
@@ -53,7 +53,7 @@
 
 }
 
-.loginsection .icontemail{
+.registerSection .icontemail{
 
     left: -135px;
     top: 40px;
@@ -63,7 +63,7 @@
 
 }
 
-.loginsection .icontraseña{
+.registerSection .icontraseña{
 
     left: -135px;
     top: 40px;
@@ -113,7 +113,7 @@ input{
 
 
 
-.loginsection button{
+.registerSection button{
     position: relative;
     top: -105px;
     box-sizing: border-box;
