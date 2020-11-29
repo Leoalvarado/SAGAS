@@ -26,6 +26,7 @@
     left: -135px;
     top: 45px;
     position: relative;
+    color: #fff;
 
 }
 .loginsection .iconkey{
@@ -35,6 +36,7 @@
     position: relative;
     margin:0px;
     padding: 0px;
+    color: #fff;
 
 }
 input{

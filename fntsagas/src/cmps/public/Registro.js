@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {BiUser}from 'react-icons/bi'
-import {BiKey}from 'react-icons/bi'
+import {AccountCircle,PeopleAltRounded,ContactPhone,EmailRounded,VpnKeyRounded } from '@material-ui/icons';
+
 import Page from '../cmns/Page';
 import "./Registro.css";
 
@@ -35,7 +35,7 @@ const Registro = ()=>{
                 }
                 */
     //capturamos los datos del formulario
-    const onLogin = (e)=>{
+    const onRegister = (e)=>{
             const{nombre,apellido,tel,email,password}=form;
             console.log(nombre);
             console.log(apellido);
@@ -48,22 +48,39 @@ const Registro = ()=>{
         <Page heading="Registrarse" footer={true}>
            <section className="loginsection">
             <div className="Cajalogin">
-            <div>
-                <input type="text" name="nombre" value={form.nombre} onChange={onChange} placeholder="Nombre"></input>
+                <h2>Ingresa tus Datos Aquí</h2>
+            <div className="t1">
+                <div className="iconlog" >
+                    <AccountCircle  size="2em"></AccountCircle>
+                </div>
+                <input type="text" name="nombre" value={form.nombre} onChange={onChange}  className="text1" placeholder="Nombre"></input>
             </div> 
-            <div>
-                <input type="text" name="apellido" value={form.apellido} onChange={onChange} placeholder="Apellido"></input>
+            <div className="t2">
+                <div className="iconkey" >
+                    <PeopleAltRounded  size="2em"></PeopleAltRounded>
+                </div>
+                <input type="text" name="apellido" value={form.apellido} onChange={onChange} className="text2" placeholder="Apellido"></input>
             </div>
-            <div>
-                <input type="text" name="tel" value={form.tel} onChange={onChange} placeholder="Teléfono"></input>
+
+            <div className="t3">
+                 <div className="icontel" >
+                    <ContactPhone  size="2em"></ContactPhone>
+                </div>
+                <input type="text" name="tel" value={form.tel} onChange={onChange} className="text3" placeholder="Teléfono"></input>
             </div>  
-            <div>
-                <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
+            <div className="t4">
+                <div className="icontemail" >
+                    <EmailRounded  size="2em"></EmailRounded>
+                </div>
+                <input type="text" name="email" value={form.email} onChange={onChange} className="text4" placeholder="Correo Electrónico"></input>
             </div>
-            <div>
-              <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
+            <div className="t5">
+                <div className="icontraseña" >
+                        <VpnKeyRounded  size="2em"></VpnKeyRounded>
+                    </div>
+                <input type="password" name="password" value={form.password} onChange={onChange} className="text5" placeholder="Contraseña"></input>
             </div>
-           <button onClick={onLogin}>Registrarse</button>
+           <button onClick={onRegister}>Registrarse</button>
            </div>
            </section>
         </Page>
