@@ -1,6 +1,7 @@
 import {useState} from 'react';
 //import {BiUser}from 'react-icons/bi'
 //import {BiKey}from 'react-icons/bi'
+import {Redirect} from 'react-router-dom';
 import {AccountCircle, VpnKey} from '@material-ui/icons';
 import Page from '../cmns/Page';
 import "./Login.css";
@@ -34,14 +35,24 @@ const Login = ()=>{
                 }
                 */
     //capturamos los datos del formulario
+    
+    
+    let[redirect,setRedirect]=useState("");
+    if(redirect!==""){
+        return(<Redirect to={redirect}></Redirect>);
+    }
+    
+    
     const onLogin = (e)=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
+            setRedirect("/Menu")
     }
 
+
     return(
-        <Page heading="Iniciar Sesion" footer={true}>
+        <Page heading="Iniciar Sesion" footer2={true}>
            <section className="loginsection">
             <div className="Cajalogin">   
             <div>
