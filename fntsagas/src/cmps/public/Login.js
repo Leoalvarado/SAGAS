@@ -1,6 +1,8 @@
 import {useState} from 'react';
-import {BiUser}from 'react-icons/bi'
-import {BiKey}from 'react-icons/bi'
+//import {BiUser}from 'react-icons/bi'
+//import {BiKey}from 'react-icons/bi'
+import {Redirect} from 'react-router-dom';
+import {AccountCircle, VpnKey} from '@material-ui/icons';
 import Page from '../cmns/Page';
 import "./Login.css";
 
@@ -33,25 +35,35 @@ const Login = ()=>{
                 }
                 */
     //capturamos los datos del formulario
+    
+    
+    let[redirect,setRedirect]=useState("");
+    if(redirect!==""){
+        return(<Redirect to={redirect}></Redirect>);
+    }
+    
+    
     const onLogin = (e)=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
+            setRedirect("/Menu")
     }
 
+
     return(
-        <Page heading="Iniciar Sesion" footer={true}>
+        <Page heading="Iniciar Sesion" footer2={true}>
            <section className="loginsection">
             <div className="Cajalogin">   
             <div>
                 <div className="iconlog" >
-                    <BiUser  size="2em"></BiUser>
+                    <AccountCircle  size="2em"></AccountCircle>
                 </div>
                 <input type="text" name="email" value={form.email} onChange={onChange} placeholder="Correo Electrónico"></input>
             </div>
             <div>
                 <div className="iconkey" >
-                        <BiKey  size="2em"></BiKey>
+                        <VpnKey  size="2em"></VpnKey>
                 </div>
               <input type="password" name="password" value={form.password} onChange={onChange} placeholder="Contraseña"></input>
             </div>

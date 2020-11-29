@@ -18,16 +18,19 @@ class SeguridadModel {
   }
 
   async addUsuario( data ) {
-    const {email, password} = data;
+    const {email,identidad,nombre, password, telefono} = data;
     try {
       let nuevo = {
         "email": email,
+        "identidad":identidad,
+        "nombre":nombre,
         "password": bcrypt.hashSync(password, 10),
         "lastlogin": 0,
         "lastpwdchg": 0,
         "pwdexp": new Date().getTime() + (1000*60*60*24*90), /* mils, s , m, h, d */
         "oldpwd":[],
-        "roles":["public"]
+        "roles":["public"],
+        "telefono":telefono
       }
       let rslt = await this.collection.insertOne(nuevo);
       return rslt;

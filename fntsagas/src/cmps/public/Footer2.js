@@ -14,16 +14,13 @@ import { FcGoogle } from 'react-icons/fc';
 // import {SocialMediaIconsReact} from 'social-media-icons-react';
 // ReactDOM.render(<SocialMediaIconsReact icon="twitter" url="https://twitter.com/your-twitter-handle"/>,	document.getElementById('root'));
 
-import "./Footer.css";
-const Footer = ()=>{
+import "./Footer2.css";
+const Footer2 = ()=>{
   return (
     <footer>
       <nav>
       <ul>
               <li><NavLink to="/"><Home size="1.5em"/></NavLink></li>
-                <li><NavLink to="/login"><Category size="1.5em"></Category></NavLink></li> 
-                <li><NavLink to="/productos"><AddShoppingCart icon="dashboard" size="1.5em" /></NavLink></li>
-                <li><NavLink to="/productos"><EmojiPeople icon="dashboard" size="1.5em" /></NavLink></li>
                 </ul>
       </nav>
       
@@ -32,7 +29,7 @@ const Footer = ()=>{
   )
 }
 
-export default Footer;
+export default Footer2;
 /*
 
 <li><NavLink to="/"><MdHome size="1.5em"/></NavLink></li>
