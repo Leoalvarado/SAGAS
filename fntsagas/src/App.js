@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 import 
 import Home from './cmps/public/Home';
 import Login from './cmps/public/Login';
-
+import Footer from './cmps/public/Footer';
 
 function App() {
   return (
