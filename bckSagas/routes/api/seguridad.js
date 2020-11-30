@@ -35,14 +35,25 @@ router.post('/login', async(req, res)=>{
 // signin
 router.post('/signin', async(req, res)=>{
   try{
-    let { email, password } = req.body;
+    let { email,identidad,nombre, password,telefono } = req.body;
     // realizar validaciones
-    let rslt = await SecMdl.addUsuario({email, password});
+    let rslt = await SecMdl.addUsuario({email,identidad,nombre, password,telefono });
     res.status(200).json(rslt);
   }catch(ex){
     console.log(ex);
     res.status(500).json({"msg":"Algo Salió Mal"})
   }
 }); // post signin
+
+router.get('/user/:id', async (req, res)=>{
+    try {
+        let {email} = req.body;
+        let rslt = await SecMdl.getUserByEmail(email);
+        res.status(200).json(rslt);
+    } catch (ex) {
+        console.log(ex);
+        res.status(500).json({ "msg": "Algo Paso Mal." });
+    }
+}); 
 
 module.exports = router;

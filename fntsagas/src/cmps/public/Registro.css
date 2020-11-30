@@ -1,0 +1,127 @@
+.registerSection{
+    width: 100;
+    align-self:center;
+    justify-self: center;
+    margin-bottom: 5em;
+    margin-top: 36vh;
+    
+}
+.registerSection h2{
+    margin-top:  2px;
+    color:#fff
+}
+.registerSection .Cajalogin{
+    box-sizing: border-box;
+    height: 420px;
+    width: 320px;
+    padding:1.9em 2em 1em;
+    background-color: rgba(57, 19, 107, 0.842);
+    border-radius: 7px;
+    top: -145px;
+    position: relative;
+
+}
+.registerSection div{
+    margin: 3px;
+
+}
+.registerSection .iconlog{
+
+    left: -135px;
+    top: 45px;
+    position: relative;
+    color: #fff;
+
+}
+.registerSection .iconkey{
+
+    left: -135px;
+    top: 40px;
+    position: relative;
+    padding: 0px;
+    color: #fff;
+}
+
+
+.registerSection .icontel{
+
+    left: -135px;
+    top: 40px;
+    position: relative;
+    padding: 0px;
+    color: #fff;
+
+}
+
+.registerSection .icontemail{
+
+    left: -135px;
+    top: 40px;
+    position: relative;
+    padding: 0px;
+    color: #fff;
+
+}
+
+.registerSection .icontraseña{
+
+    left: -135px;
+    top: 40px;
+    position: relative;
+    padding: 0px;
+    color: #fff;
+
+}
+
+
+.t1{
+    padding:0em 0em 0em;
+    margin: 0;
+}
+.t2{
+    padding:0em 0em 0em;
+    margin: 0;
+    top: -20px;
+    position: relative;
+} 
+.t3{
+    padding:0em 0em 0em;
+    margin: 0;
+    top: -44px;
+    position: relative;
+} 
+.t4{
+    padding:0em 0em 0em;
+    margin: 0;
+    top: -70px;
+    position: relative;
+}
+.t5{
+    padding:0em 0em 0em;
+    margin: 0;
+    top: -96px;
+    position: relative;
+}
+input{
+    padding:0.9em 2em 1em;
+    border: 1px solid rgb(83, 12, 150);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #222;
+    left: 4px;
+    top: 1px;
+  }
+
+
+
+.registerSection button{
+    position: relative;
+    top: -105px;
+    box-sizing: border-box;
+    border: 1px solid rgb(83, 12, 150);
+    background-color: rgba(255, 247, 247, 0.925);
+    border-radius: 12px;
+    padding:1em 2em;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+    margin: 1em;
+    font-weight: bold;
+}

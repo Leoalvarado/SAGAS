@@ -52,4 +52,16 @@ router.put('/actualizarPrecioProducto/:id', async (req, res)=>{
     }
 });
 
+router.delete('/eliminarProducto/:id', async (req, res)=>{
+    let {id} = req.params;
+    try {
+
+        let rslt = await mdbProductosModel.removeProducto(id);
+        res.status(200).json(rslt);
+    } catch (ex) {
+        console.log(ex);
+        res.status(500).json({"msg":"Algo Paso Mal."});
+    }
+});
+
 module.exports = router;

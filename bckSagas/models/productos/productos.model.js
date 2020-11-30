@@ -55,5 +55,15 @@ class VentasModel{
         }
     }
 
+    async removeProducto(id){
+        try {
+            const _id = new ObjectID(id);
+            let rslt = await this.collection.deleteOne({_id});
+            return rslt;
+        } catch (ex) {
+            throw(ex);
+        }
+    }
+
 }
 module.exports = VentasModel;

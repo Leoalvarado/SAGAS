@@ -26,9 +26,11 @@ const jwtAuthMiddleware = passport.authenticate('jwt', {session:false});
 const seguridadRoutes = require('./api/seguridad');
 const ventasRoutes = require('./api/ventasdb');
 const productosRoutes = require('./api/productosdb');
+const promocionesRoutes = require('./api/promociones');
 
 router.use('/seguridad', seguridadRoutes)
-router.use('/ventas',jwtAuthMiddleware, ventasRoutes)
-router.use('/productos', jwtAuthMiddleware, productosRoutes)
+router.use('/ventas',/*jwtAuthMiddleware,*/ ventasRoutes)
+router.use('/productos', /*jwtAuthMiddleware,*/ productosRoutes)
+router.use('/promociones', /*jwtAuthMiddleware,*/ promocionesRoutes)
 
 module.exports = router;
