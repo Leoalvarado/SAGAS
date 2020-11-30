@@ -19,15 +19,13 @@ const Footer = ()=>{
   return (
     <footer>
       <nav>
-      <ul>
-              <li><NavLink to="/"><Home size="1.5em"/></NavLink></li>
-                <li><NavLink to="/login"><Category size="1.5em"></Category></NavLink></li> 
-                <li><NavLink to="/productos"><AddShoppingCart icon="dashboard" size="1.5em" /></NavLink></li>
-                <li><NavLink to="/productos"><EmojiPeople icon="dashboard" size="1.5em" /></NavLink></li>
-                </ul>
+        <ul>
+            <li><NavLink to="/"><Home size="1.5em"/></NavLink></li>
+            <li><NavLink to="/login"><Category size="1.5em"></Category></NavLink></li> 
+            <li><NavLink to="/menu"><AddShoppingCart icon="dashboard" size="1.5em" /></NavLink></li>
+            <li><NavLink to="/productos"><EmojiPeople icon="dashboard" size="1.5em" /></NavLink></li>
+        </ul>
       </nav>
-      
-      
     </footer>
   )
 }

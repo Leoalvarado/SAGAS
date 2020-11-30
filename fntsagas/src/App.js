@@ -46,8 +46,8 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-
           <Route path="/menu" exact component={Menu}/>
+          
         </AnimatedSwitch>
       </section>
     </Router>
