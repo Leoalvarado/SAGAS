@@ -40,7 +40,7 @@ const Menu = ()=>{
            <section className="mensection">
                 <img src={logo} className="logoex"/>
                 <ul className="menuList">
-               {listElements}
+                    {listElements}
                 </ul>
            </section>
 
