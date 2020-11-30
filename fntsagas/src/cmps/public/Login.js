@@ -47,7 +47,7 @@ const Login = ()=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
-            setRedirect("/Menu")
+            setRedirect("/Menu");
     }
 
 
