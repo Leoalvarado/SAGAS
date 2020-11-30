@@ -13,7 +13,8 @@
     padding:1.9em 2em 1em;
     background-color: rgba(57, 19, 107, 0.842);
     border-radius: 7px;
-    top: -145px;
+    top: -300px;
+    left: 30px;
     position: relative;
 
 }
@@ -57,4 +58,21 @@ input{
     box-shadow: 1px 1px 3px rgb(32, 32, 32);
     margin: 1em;
     font-weight: bold;
+}
+
+.page.logo{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.loginsection img{
+    margin: 0;
+    padding: 0px 0px 0px;
+    width: 70%;
+    position: relative;
+    left: 70px;
+    top: -300px;
+    display: flex;
+    
 }

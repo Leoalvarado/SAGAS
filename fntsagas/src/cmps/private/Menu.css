@@ -1,0 +1,16 @@
+.page.logo{
+    margin: 0px;
+    padding: 0px;
+
+}
+
+.mensection img{
+    margin: 0;
+    padding: 0px 0px 0px;
+    width: 30%;
+    position: relative;
+    left: 140px;
+    top: -95px;
+    display: flex;
+    
+}

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
+import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "../private/Menu.css";
 
@@ -10,10 +11,11 @@ const Menu = ()=>{
         return(<Redirect to={redirect}></Redirect>);
     }
     return(
-        <Page heading="Sagas's Menu" footer={true}>
-           <section className="mensection">
-
+        <Page heading="_" footer={true}>
             
+
+           <section className="mensection">
+                <img src={logo} className="logoex"/>
            </section>
 
         </Page>
