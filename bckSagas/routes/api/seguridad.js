@@ -45,7 +45,7 @@ router.post('/signin', async(req, res)=>{
   }
 }); // post signin
 
-router.get('/user/:id', async (req, res)=>{
+router.get('/user/:email', async (req, res)=>{
     try {
         let {email} = req.body;
         let rslt = await SecMdl.getUserByEmail(email);
