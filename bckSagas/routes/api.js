@@ -29,8 +29,8 @@ const productosRoutes = require('./api/productosdb');
 const promocionesRoutes = require('./api/promociones');
 
 router.use('/seguridad',jwtAuthMiddleware, seguridadRoutes)
-router.use('/ventas',/*jwtAuthMiddleware,*/ ventasRoutes)
-router.use('/productos', /*jwtAuthMiddleware,*/ productosRoutes)
-router.use('/promociones', /*jwtAuthMiddleware,*/ promocionesRoutes)
+router.use('/ventas',jwtAuthMiddleware, ventasRoutes)
+router.use('/productos', jwtAuthMiddleware, productosRoutes)
+router.use('/promociones', jwtAuthMiddleware, promocionesRoutes)
 
 module.exports = router;
