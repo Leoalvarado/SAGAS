@@ -1,6 +1,6 @@
 import {useState} from 'react';
 import {AccountCircle,PeopleAltRounded,ContactPhone,EmailRounded,VpnKeyRounded } from '@material-ui/icons';
-
+import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Registro.css";
 
@@ -47,6 +47,7 @@ const Registro = ()=>{
     return(
         <Page heading="Registrarse" footer2={true}>
            <section className="registerSection">
+           <img src={logo} className="logoex"/>
             <div className="Cajalogin">
                 <h2>Ingresa tus Datos Aquí</h2>
             <div className="t1">

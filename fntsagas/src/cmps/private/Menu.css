@@ -1,0 +1,46 @@
+.mensection img{
+    margin: 0;
+    padding: 0px 0px 0px;
+    width: 30%;
+    position: relative;
+    left: 140px;
+    top: -95px;
+    display: flex;
+}
+    
+.menuList{
+    padding: 1em;
+    margin: -1em -1em 0px -1em;
+    background-color: #888;
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    overflow-y: scroll;
+    justify-content: center;
+}
+
+ .mensection .menuList li{
+    box-sizing: border-box;
+    padding: 0.5em;
+    margin: 0.25em;
+    flex-basis: 45%;
+    min-height: 120px;
+    background-color: #fff;
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mensection .menuList li span{
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px #000;
+    margin: 0.5em;
+}

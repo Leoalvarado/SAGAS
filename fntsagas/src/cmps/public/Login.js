@@ -3,6 +3,7 @@ import {useState} from 'react';
 //import {BiKey}from 'react-icons/bi'
 import {Redirect} from 'react-router-dom';
 import {AccountCircle, VpnKey} from '@material-ui/icons';
+import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Login.css";
 
@@ -54,6 +55,7 @@ const Login = ()=>{
     return(
         <Page heading="Iniciar Sesion" footer2={true}>
            <section className="loginsection">
+           <img src={logo} className="logoex"/>
             <div className="Cajalogin">   
             <div>
                 <div className="iconlog" >

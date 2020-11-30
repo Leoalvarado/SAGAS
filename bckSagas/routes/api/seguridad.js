@@ -45,7 +45,17 @@ router.post('/signin', async(req, res)=>{
   }
 }); // post signin
 
-router.get('/user/:id', async (req, res)=>{
+router.get('/userAll', async (req, res)=>{
+  try {
+      let rsltset = await SecMdl.getUserAll();
+      res.status(200).json(rsltset);
+  } catch (ex) {
+      console.log(ex);
+      res.status(500).json({ "msg": "Algo Paso Mal." });
+  }
+}); 
+
+router.get('/user/:email', async (req, res)=>{
     try {
         let {email} = req.body;
         let rslt = await SecMdl.getUserByEmail(email);

@@ -66,6 +66,15 @@ class SeguridadModel {
     }
   }
 
+  async getUserAll(){
+    try {
+        let rslt = await this.collection.find({}).toArray();
+        return rslt;
+    } catch (ex) {
+        throw(ex);
+    }
+}
+
 }
 
 module.exports = SeguridadModel;
