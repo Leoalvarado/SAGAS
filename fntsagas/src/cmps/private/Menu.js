@@ -35,10 +35,9 @@ const Menu = ()=>{
     }
     return(
         <Page heading="_" footer={true}>
-            
-
            <section className="mensection">
                 <img src={logo} className="logoex"/>
+                
                 <ul className="menuList">
                {listElements}
                 </ul>
