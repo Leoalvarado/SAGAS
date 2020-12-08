@@ -23,7 +23,10 @@ export default App;
 import './App.css';
 import './utlts/Transitions.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
+import {StateProvider} from './utlts/Context';
+import mainReducer from './utlts/store/store';
+import PrivateRoute from './utlts/PrivateRoute';
+import Splash from './cmps/public/Splash';
 import { AnimatedSwitch } from 'react-router-transition';
 import { pageTransitions as transition, mapGlideStyles as mapStyles } from './utlts/Transitions';
 
@@ -32,12 +35,14 @@ import Home from './cmps/public/Home';
 import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
 import Menu from './cmps/private/Menu';
-
+import NotFound from './cmps/public/NotFound';
 function App() {
+  let appState = mainReducer();
   return (
+    <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
-      <section>
+      <Splash>
         <AnimatedSwitch
           {...transition}
           mapStyles={mapStyles}
@@ -46,12 +51,16 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-          <Route path="/menu" exact component={Menu}/>
+          <PrivateRoute path="/Menu" component={Menu}/>
+              
+
+              <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
-      </section>
+      </Splash>
     </Router>
     </div>
+    </StateProvider>
   );
 }
 
