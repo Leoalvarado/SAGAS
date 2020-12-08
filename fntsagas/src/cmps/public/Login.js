@@ -7,6 +7,7 @@ import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Login.css";
 
+import axios from 'axios';
 
 const Login = ()=>{
     //const [email,setEmail]=useState("");
@@ -48,6 +49,14 @@ const Login = ()=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
+            axios.post('/api/seguridad/login',
+            {email,password}
+            ).then((data)=>{
+                console.log(data);
+            }).catch((err)=>{
+
+                console.log(err);
+            })
             setRedirect("/Menu");
     }
 
