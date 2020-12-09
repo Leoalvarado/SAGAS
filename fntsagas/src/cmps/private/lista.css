@@ -1,4 +1,4 @@
-.mensection img{
+.listasection img{
     margin: 0;
     padding: 0px 0px 0px;
     width: 30%;
@@ -20,7 +20,7 @@
     justify-content: center;
 }
 
- .mensection .menuList li{
+ .listasection .menuList li{
     box-sizing: border-box;
     padding: 0.5em;
     margin: 0.25em;
@@ -34,7 +34,7 @@
     flex-direction: column;
 }
 
-.mensection .menuList li span{
+.listasection .menuList li span{
     display: flex;
     width: 60px;
     height: 60px;

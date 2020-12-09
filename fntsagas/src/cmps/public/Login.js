@@ -1,13 +1,15 @@
 import {useState} from 'react';
-//import {BiUser}from 'react-icons/bi'
-//import {BiKey}from 'react-icons/bi'
 import {Redirect} from 'react-router-dom';
+import {Link, useHistory, useLocation} from 'react-router-dom';
 import {AccountCircle, VpnKey} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Login.css";
+import { LOGIN_FETCHING, LOGIN_FETCHING_FAILED, LOGIN_SUCCESS } from '../../utlts/store/reducers/auth.reducer';
+import {naxios as axios, setJWT} from '../../utlts/Axios';
 
 
+import {useStateContext} from '../../utlts/Context';
 const Login = ()=>{
     //const [email,setEmail]=useState("");
     //const [pswd,setPassword]=useState("");
@@ -17,6 +19,10 @@ const Login = ()=>{
             email:'',
             password:''
         });
+        
+        const [, dispatch] = useStateContext();
+        const routeHistory = useHistory();
+        const location = useLocation();
 
         const onChange = (e)=>{
             const {name, value} = e.target;
@@ -25,16 +31,6 @@ const Login = ()=>{
                 [name]:value,
             });    
         }
-            /*let onChange = (e)=>{
-                console.log(e.target);
-                if(e.target.name=="Email"){
-                    setEmail(e.target.value);
-                }
-
-                if(e.target.name=="Pswd"){
-                    setPassword(e.target.value);
-                }
-                */
     //capturamos los datos del formulario
     
     
@@ -43,16 +39,34 @@ const Login = ()=>{
         return(<Redirect to={redirect}></Redirect>);
     }
     
-    
+    /*
     const onLogin = (e)=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
             setRedirect("/Menu");
     }
-
-
-    return(
+        */
+        let { from } = location.state || { from: { pathname: "/" } };
+        const onLogin = (e)=>{
+            const { email, password} = form;
+            //call a model (axios)
+            dispatch({ type: LOGIN_FETCHING });
+            axios.post(
+            '/api/seguridad/login',
+            {email, password}
+            ).then(({data})=>{
+            dispatch({type:LOGIN_SUCCESS, payload:data});
+            setJWT(data.jwt);
+            console.log(data);
+            routeHistory.replace(setRedirect("/Menup"));
+            }).catch((err)=>{
+            dispatch({ type: LOGIN_FETCHING_FAILED });
+            setRedirect("/");
+            console.log(err);
+            })
+        }
+         return(
         <Page heading="Iniciar Sesion" footer2={true}>
            <section className="loginsection">
            <img src={logo} className="logoex"/>

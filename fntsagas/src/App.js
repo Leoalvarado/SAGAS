@@ -23,7 +23,10 @@ export default App;
 import './App.css';
 import './utlts/Transitions.css';
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-
+import {StateProvider} from './utlts/Context';
+import mainReducer from './utlts/store/store';
+import PrivateRoute from './utlts/PrivateRoute';
+import Splash from './cmps/public/Splash';
 import { AnimatedSwitch } from 'react-router-transition';
 import { pageTransitions as transition, mapGlideStyles as mapStyles } from './utlts/Transitions';
 
@@ -31,10 +34,14 @@ import { pageTransitions as transition, mapGlideStyles as mapStyles } from './ut
 import Home from './cmps/public/Home';
 import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
-import Menu from './cmps/private/Menu';
-
+import Menup from './cmps/private/Menup';
+import lista from './cmps/private/lista';
+import NotFound from './cmps/public/NotFound';
+import ListProducts from './cmps/private/ListProductos';
 function App() {
+  let appState = mainReducer();
   return (
+    <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
       <section>
@@ -46,12 +53,21 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-          <Route path="/menu" exact component={Menu}/>
+
+
+
+          <PrivateRoute path="/Menup" exact  component={Menup}/>
+          <PrivateRoute path="/productos"  component={ListProducts}/>
+          <PrivateRoute path="/lista"  component={lista}/>
+              
+
+              <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
       </section>
     </Router>
     </div>
+    </StateProvider>
   );
 }
 
