@@ -47,6 +47,7 @@ const Login = ()=>{
             setRedirect("/Menu");
     }
         */
+        
         let { from } = location.state || { from: { pathname: "/" } };
         const onLogin = (e)=>{
             const { email, password} = form;
@@ -58,12 +59,11 @@ const Login = ()=>{
             ).then(({data})=>{
             dispatch({type:LOGIN_SUCCESS, payload:data});
             setJWT(data.jwt);
-            console.log(data);
             routeHistory.replace(setRedirect("/Menup"));
             }).catch((err)=>{
             dispatch({ type: LOGIN_FETCHING_FAILED });
-            setRedirect("/");
             console.log(err);
+            setRedirect("/");
             })
         }
          return(

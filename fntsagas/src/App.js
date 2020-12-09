@@ -44,7 +44,7 @@ function App() {
     <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
-      <section>
+      <Splash>
         <AnimatedSwitch
           {...transition}
           mapStyles={mapStyles}
@@ -54,17 +54,15 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
 
-
-
-          <PrivateRoute path="/Menup" exact  component={Menup}/>
-          <PrivateRoute path="/productos"  component={ListProducts}/>
-          <PrivateRoute path="/lista"  component={lista}/>
+            <PrivateRoute path="/Menup"   component={Menup}/>
+            <PrivateRoute path="/productos"  component={ListProducts}/>
+            <PrivateRoute path="/lista"  component={lista}/>
               
 
               <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
-      </section>
+      </Splash>
     </Router>
     </div>
     </StateProvider>
