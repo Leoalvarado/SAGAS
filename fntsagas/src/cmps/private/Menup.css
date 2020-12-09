@@ -1,0 +1,29 @@
+.menpsection img{
+    margin: 0;
+    padding: 0px 0px 0px;
+    width: 30%;
+    position: relative;
+    left: 140px;
+    top: -95px;
+    display: flex;
+}
+.menpsection button{
+    justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    display:block;
+    text-transform: uppercase;
+    height: 80px;
+    width: 350px;
+    overflow: hidden;
+    align-content: center;
+    box-sizing: border-box;
+    border: 1px solid rgb(83, 12, 150);
+    background-color: rgba(255, 247, 247, 0.925);
+    border-radius: 12px;
+    padding:1em 2em;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+    margin: 1em;
+    font-weight: bold;
+}
+    

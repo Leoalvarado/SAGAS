@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
-import "./Menu.css";
+import "./lista.css";
 
 const dummydata = [
     {"_id":1, "label":"Contenido 1", "count":1},
@@ -23,7 +23,7 @@ const dummydata = [
     {"_id":16, "label":"Contenido 16", "count":1},
 ];
 
-const Menu = ()=>{
+const Lista = ()=>{
 
     const listElements = dummydata.map((o) =>{
     return (<li key={o._id}>{o.label}<span>{o.count}</span></li>)
@@ -35,7 +35,7 @@ const Menu = ()=>{
     }
     return(
         <Page heading="_" footer={true}>
-           <section className="mensection">
+           <section className="listasection">
                 <img src={logo} className="logoex"/>
                 
                 <ul className="menuList">
@@ -46,4 +46,4 @@ const Menu = ()=>{
         </Page>
     )
 }
-export default Menu;
+export default Lista;

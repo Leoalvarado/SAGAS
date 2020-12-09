@@ -34,7 +34,8 @@ import { pageTransitions as transition, mapGlideStyles as mapStyles } from './ut
 import Home from './cmps/public/Home';
 import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
-import Menu from './cmps/private/Menu';
+import Menup from './cmps/private/Menup';
+import lista from './cmps/private/lista';
 import NotFound from './cmps/public/NotFound';
 import ListProducts from './cmps/private/ListProductos';
 function App() {
@@ -52,8 +53,12 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-          <PrivateRoute path="/Menu" exact  component={Menu}/>
-      
+
+
+
+          <PrivateRoute path="/Menup" exact  component={Menup}/>
+          <PrivateRoute path="/productos"  component={ListProducts}/>
+          <PrivateRoute path="/lista"  component={lista}/>
               
 
               <Route path="*" component={NotFound} />

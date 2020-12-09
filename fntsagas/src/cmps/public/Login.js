@@ -59,7 +59,7 @@ const Login = ()=>{
             dispatch({type:LOGIN_SUCCESS, payload:data});
             setJWT(data.jwt);
             console.log(data);
-            routeHistory.replace(setRedirect("/Menu"));
+            routeHistory.replace(setRedirect("/Menup"));
             }).catch((err)=>{
             dispatch({ type: LOGIN_FETCHING_FAILED });
             setRedirect("/");
