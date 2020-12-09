@@ -1,5 +1,5 @@
 import {useState} from 'react';
-//import {Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import {Link, useHistory, useLocation} from 'react-router-dom';
 import {AccountCircle, VpnKey} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
@@ -33,13 +33,13 @@ const Login = ()=>{
         }
     //capturamos los datos del formulario
     
-    /*
+    
     let[redirect,setRedirect]=useState("");
     if(redirect!==""){
         return(<Redirect to={redirect}></Redirect>);
     }
     
-    
+    /*
     const onLogin = (e)=>{
             const{email,password}=form;
             console.log(email);
@@ -58,9 +58,11 @@ const Login = ()=>{
             ).then(({data})=>{
             dispatch({type:LOGIN_SUCCESS, payload:data});
             setJWT(data.jwt);
-            routeHistory.replace(from);
+            console.log(data);
+            routeHistory.replace(setRedirect("/Menu"));
             }).catch((err)=>{
             dispatch({ type: LOGIN_FETCHING_FAILED });
+            setRedirect("/");
             console.log(err);
             })
         }

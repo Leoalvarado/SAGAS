@@ -43,7 +43,7 @@ function App() {
     <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
-      <Splash>
+      <section>
         <AnimatedSwitch
           {...transition}
           mapStyles={mapStyles}
@@ -52,14 +52,14 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-          <PrivateRoute path="/Menu"  component={Menu}/>
+          <PrivateRoute path="/Menu" exact  component={Menu}/>
       
               
 
               <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
-      </Splash>
+      </section>
     </Router>
     </div>
     </StateProvider>
