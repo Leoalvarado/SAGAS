@@ -8,7 +8,6 @@ import "./Login.css";
 import { LOGIN_FETCHING, LOGIN_FETCHING_FAILED, LOGIN_SUCCESS } from '../../utlts/store/reducers/auth.reducer';
 import {naxios as axios, setJWT} from '../../utlts/Axios';
 
-import {useStateContext} from '../../utlts/Context';
 
 const Login = ()=>{
     //const [email,setEmail]=useState("");
@@ -44,14 +43,6 @@ const Login = ()=>{
             const{email,password}=form;
             console.log(email);
             console.log(password);
-            axios.post('/api/seguridad/login',
-            {email,password}
-            ).then((data)=>{
-                console.log(data);
-            }).catch((err)=>{
-
-                console.log(err);
-            })
             setRedirect("/Menu");
     }
         */
