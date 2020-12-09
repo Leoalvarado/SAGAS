@@ -27,6 +27,7 @@ router.post('/promos', async (req, res)=>{
     }
 }); 
 
+
 router.put('/agregarProductoPromo/:idPromo', async (req, res)=>{
     try {
         let { idPromo } = req.params;
