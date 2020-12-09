@@ -49,7 +49,7 @@ class PromocionesModel{
       async addProductoPromo(idPromo, idProducto, nombre, precio){
         try {
             const _idProducto = new ObjectID(idProducto);
-            const updOps = {"$addToSet": { Producto: {_idProducto, nombre, precio} }};
+            const updOps = {"$addToSet": {Producto: {_idProducto, nombre, precio} }};
             const _id = new ObjectID(idPromo);
             let updDoc = await this.collection.findOneAndUpdate({_id}, updOps, {returnOriginal:false});
             return updDoc;
