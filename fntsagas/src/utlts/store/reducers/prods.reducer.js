@@ -1,4 +1,4 @@
-import Menu from "../../../cmps/private/Menu";
+import ListProducts from "../../../cmps/private/ListProductos";
 
 const initialState = {
   hasMore:true,

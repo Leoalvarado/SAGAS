@@ -36,13 +36,14 @@ import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
 import Menu from './cmps/private/Menu';
 import NotFound from './cmps/public/NotFound';
+import ListProducts from './cmps/private/ListProductos';
 function App() {
   let appState = mainReducer();
   return (
     <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
-      <Splash>
+      <section>
         <AnimatedSwitch
           {...transition}
           mapStyles={mapStyles}
@@ -51,13 +52,14 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
-          <PrivateRoute path="/Menu" component={Menu}/>
+          <PrivateRoute path="/productos"  component={ListProducts}/>
+      
               
 
               <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
-      </Splash>
+      </section>
     </Router>
     </div>
     </StateProvider>
