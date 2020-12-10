@@ -39,6 +39,11 @@ import lista from './cmps/private/lista';
 import Promociones from './cmps/private/promociones';
 import NotFound from './cmps/public/NotFound';
 import ListProducts from './cmps/private/ListProductos';
+//MENUS
+import Flores from './cmps/private/flores';
+import Eventos from './cmps/private/eventos';
+import Cumple from './cmps/private/cumple';
+import Fiestas from './cmps/private/fiestas';
 function App() {
   let appState = mainReducer();
   return (
@@ -59,6 +64,11 @@ function App() {
             <PrivateRoute path="/productos"  component={ListProducts}/>
             <PrivateRoute path="/lista"  component={lista}/>
             <PrivateRoute path="/promo"  component={Promociones}/>
+
+            <PrivateRoute path="/flores"  component={Flores}/>
+            <PrivateRoute path="/cumple"  component={Cumple}/>
+            <PrivateRoute path="/eventos"  component={Eventos}/>
+            <PrivateRoute path="/fiestas"  component={Fiestas}/>
               
 
               <Route path="*" component={NotFound} />

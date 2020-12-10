@@ -3,6 +3,7 @@ import {Redirect} from 'react-router-dom';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./promociones.css";
+import InfiniteScroll from 'react-infinite-scroller';
 import img1 from "../public/img/promo1.png";
 import img2 from "../public/img/promo2.png";
 import img3 from "../public/img/promo3.png";
@@ -28,63 +29,57 @@ const Promociones = ()=>{
                 
                 <div className="galeria">
                     <img src={img1}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/eventos")}}>Ver Producto</button>
                 </div>          
 
                 <div className="galeria">
                     <img src={img2}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>Ver Producto</button>
                 </div>
 
                 <div className="galeria">
                     <img src={img3}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/flores")}}>Ver Producto</button>
                 </div> 
 
                 <div className="galeria">
                     <img src={img4}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
                     <img src={img5}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/flores")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
                     <img src={img6}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/eventos")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
                     <img src={img7}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/fiestas")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
                     <img src={img8}/>
-                    <button>IR AQUÍ</button>
-                </div>   
-
-                <div className="galeria">
-                    <img src={img10}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
                     <img src={img9}/>
-                    <button>IR AQUÍ</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>Ver Producto</button>
                 </div>   
 
                 <div className="galeria">
-                    <img src={img7}/>
-                    <button>IR AQUÍ</button>
-                </div>   
-
-                <div className="galeria">
-                    <img src={img6}/>
-                    <button>IR AQUÍ</button>
-                </div>                   
+                    <img src={img10}/>
+                    <button onClick={(e)=>{setRedirect("/fiestas")}}>Ver Producto</button>
+                </div>             
+                <div>
+                    <br></br>
+                    <br></br>
+                    </div>   
            </section>
 
         </Page>
