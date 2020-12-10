@@ -30,12 +30,14 @@ const seguridadRoutes = require('./api/seguridad');
 const ventasRoutes = require('./api/ventasdb');
 const productosRoutes = require('./api/productosdb');
 const promocionesRoutes = require('./api/promociones');
+const carretillaRoutes = require('./api/carretilla');
 
 router.use('/seguridad',seguridadRoutes);
 router.use('/ventas',jwtAuthMiddleware, ventasRoutes);
 router.get('/heartbeat', jwtAuthMiddleware, heartBeat);
 router.use('/productos', jwtAuthMiddleware, productosRoutes);
 router.use('/promociones', jwtAuthMiddleware, promocionesRoutes);
+router.use('/carretilla', carretillaRoutes);
 
 
 module.exports = router;
