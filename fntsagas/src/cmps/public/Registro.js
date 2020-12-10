@@ -4,7 +4,7 @@ import {AccountCircle,PeopleAltRounded,ContactPhone,EmailRounded,VpnKeyRounded }
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Registro.css";
-import {axios} from 'axios';
+import {naxios} from '../../utlts/Axios';
 //import {naxios as axios, setJWT} from '../../utlts/Axios';
 
 
@@ -53,7 +53,7 @@ const Registro = ()=>{
             console.log(telefono);
             console.log(email);
             console.log(password);
-            axios.post(
+            naxios.post(
                 '/api/seguridad/signin',
                 {email,
                  nombre,
