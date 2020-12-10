@@ -1,4 +1,4 @@
-.promsection img{
+.promsection .logo{
     margin: 0;
     padding: 0px 0px 0px;
     width: 30%;
@@ -7,8 +7,39 @@
     top: -95px;
     display: flex;
 }
+
+.promsection img{
+    width: 90%;
+}
 .promsection .galeria{
     display: block;
-    
+    background-color:white;
+    margin: 0px;
+    padding: 0px 0px 0px;
+    align-items: center;   
+    box-sizing: border-box;
+    padding:0.5em;
+    margin:0.35em;
+    flex-basis: 45%;
+    min-height: 120px;
+    background-color:#fff;
+    border:1px solid rgb(83, 12, 150);
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    box-shadow: 1px 1px 2px #000;
+    border-radius: 2em;
+}
 
+.promsection button{
+    box-sizing: border-box;
+    border: 1px solid rgb(236, 155, 50);
+    background-color:rgb(83, 12, 150);
+    color: white;
+    border-radius: 12px;
+    padding:1em 2em;
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+    margin: 1em;
+    font-weight: bold;
 }
