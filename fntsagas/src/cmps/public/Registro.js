@@ -63,9 +63,12 @@ const Registro = ()=>{
                 }
                 ).then((response) => {
                     console.log(response);
+                    alert("¡Registrado con exito!");
                     setRedirect("/");
                 }).catch((err)=>{
                     console.log(err);
+                    alert("Correo No valido");
+                    
                 })
 
     }

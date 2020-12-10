@@ -63,6 +63,7 @@ const Login = ()=>{
             }).catch((err)=>{
             dispatch({ type: LOGIN_FETCHING_FAILED });
             console.log(err);
+            alert("Credenciales No validas");
             setRedirect("/");
             })
         }
