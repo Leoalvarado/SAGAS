@@ -1,8 +1,13 @@
 import {useState} from 'react';
+import {Redirect} from 'react-router-dom';
 import {AccountCircle,PeopleAltRounded,ContactPhone,EmailRounded,VpnKeyRounded } from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Registro.css";
+import {naxios} from '../../utlts/Axios';
+//import {naxios as axios, setJWT} from '../../utlts/Axios';
+
+
 
 
 const Registro = ()=>{
@@ -12,7 +17,7 @@ const Registro = ()=>{
         const [form,setForm]= useState({
             nombre:'',
             apellido:'',
-            tel:'',
+            telefono:'',
             email:'',
             password:''
         });
@@ -34,14 +39,38 @@ const Registro = ()=>{
                     setPassword(e.target.value);
                 }
                 */
+
+               let[redirect,setRedirect]=useState("");
+               if(redirect!==""){
+                   return(<Redirect to={redirect}></Redirect>);
+               }
+               
     //capturamos los datos del formulario
     const onRegister = (e)=>{
-            const{nombre,apellido,tel,email,password}=form;
+            const{email,nombre,apellido,password,telefono}=form;
             console.log(nombre);
             console.log(apellido);
-            console.log(tel);
+            console.log(telefono);
             console.log(email);
             console.log(password);
+            naxios.post(
+                '/api/seguridad/signin',
+                {email,
+                 nombre,
+                 apellido,
+                 password,
+                 telefono
+                }
+                ).then((response) => {
+                    console.log(response);
+                    alert("¡Registrado con exito!");
+                    setRedirect("/");
+                }).catch((err)=>{
+                    console.log(err);
+                    alert("Correo No valido");
+                    
+                })
+
     }
 
     return(
@@ -67,7 +96,7 @@ const Registro = ()=>{
                  <div className="icontel" >
                     <ContactPhone  size="2em"></ContactPhone>
                 </div>
-                <input type="text" name="tel" value={form.tel} onChange={onChange} className="text3" placeholder="Teléfono"></input>
+                <input type="text" name="telefono" value={form.telefono} onChange={onChange} className="text3" placeholder="Teléfono"></input>
             </div>  
             <div className="t4">
                 <div className="icontemail" >

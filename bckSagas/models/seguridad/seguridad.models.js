@@ -18,12 +18,12 @@ class SeguridadModel {
   }
 
   async addUsuario( data ) {
-    const {email,identidad,nombre, password, telefono} = data;
+    const {email,nombre,apellido,password,telefono} = data;
     try {
       let nuevo = {
         "email": email,
-        "identidad":identidad,
-        "nombre":nombre,
+        "nombre": nombre,
+        "apellido": apellido,
         "password": bcrypt.hashSync(password, 10),
         "lastlogin": 0,
         "lastpwdchg": 0,

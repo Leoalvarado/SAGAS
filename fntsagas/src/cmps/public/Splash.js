@@ -42,7 +42,7 @@ const appInit = async (auth, dispatch, routeHooks)=>{
   } else {
     try{
       setJWT(auth.jwt);
-      await paxios.get("/api/");
+      await paxios.get("/api/heartbeat");
       dispatch({ type: APP_INIT })
     } catch(e){
       console.log(e);

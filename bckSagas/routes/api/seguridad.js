@@ -35,9 +35,9 @@ router.post('/login', async(req, res)=>{
 // signin
 router.post('/signin', async(req, res)=>{
   try{
-    let { email,identidad,nombre, password,telefono } = req.body;
+    let { email,nombre,apellido,password,telefono} = req.body;
     // realizar validaciones
-    let rslt = await SecMdl.addUsuario({email,identidad,nombre, password,telefono });
+    let rslt = await SecMdl.addUsuario({email,nombre,apellido,password,telefono});
     res.status(200).json(rslt);
   }catch(ex){
     console.log(ex);

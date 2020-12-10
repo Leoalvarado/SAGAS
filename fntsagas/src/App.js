@@ -36,6 +36,7 @@ import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
 import Menup from './cmps/private/Menup';
 import lista from './cmps/private/lista';
+import Promociones from './cmps/private/promociones';
 import NotFound from './cmps/public/NotFound';
 import ListProducts from './cmps/private/ListProductos';
 function App() {
@@ -44,7 +45,7 @@ function App() {
     <StateProvider initialState={appState} reducer={mainReducer}>
     <div className="App">
     <Router>
-      <section>
+      <Splash>
         <AnimatedSwitch
           {...transition}
           mapStyles={mapStyles}
@@ -54,17 +55,16 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
 
-
-
-          <PrivateRoute path="/Menup" exact  component={Menup}/>
-          <PrivateRoute path="/productos"  component={ListProducts}/>
-          <PrivateRoute path="/lista"  component={lista}/>
+            <PrivateRoute path="/Menup"   component={Menup}/>
+            <PrivateRoute path="/productos"  component={ListProducts}/>
+            <PrivateRoute path="/lista"  component={lista}/>
+            <PrivateRoute path="/promo"  component={Promociones}/>
               
 
               <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
-      </section>
+      </Splash>
     </Router>
     </div>
     </StateProvider>
