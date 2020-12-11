@@ -73,7 +73,7 @@ function App() {
             <PrivateRoute path="/carretilla"  component={Carretilla}/>
               
 
-              <Route path="*" component={NotFound} />
+            <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
       </Splash>

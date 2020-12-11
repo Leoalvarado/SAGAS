@@ -31,7 +31,7 @@ router.post('/nuevoProducto', async (req, res)=>{
         let {sku, name, categoria, precio, stock=0} = req.body;
         precio = Number(precio);
         stock = Number(stock);
-        var rsltset = await mdbProductosModel.addProducto({sku, name, categoria, precio, stock});
+        var rsltset = await mdbProductosModel.addProducto({sku, name, categoria, precio});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
