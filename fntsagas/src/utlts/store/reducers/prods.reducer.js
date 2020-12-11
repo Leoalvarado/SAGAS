@@ -24,31 +24,13 @@ const prodsReducer = (state = initialState, action = {}) =>{
     case PRODUCT_LOADING:
       return { ...state, fetching:true};
     case PRODUCT_LOADED:
-      let nproducts = [];
-      let newCurrentPage = state.currentPage;
-      if(state.currentPage >= action.payload.currentPage) {
-        nproducts = [...state.products];
-      } else {
-        nproducts = [...state.products, ...action.payload.products];
-        newCurrentPage = action.payload.currentPage;
-      }
-      const hasMore = (nproducts.length < action.payload.total);
-      return {
-        ...state,
-        products:nproducts,
-        total:nproducts.length,
-        hasMore: hasMore,
-        currentPage: newCurrentPage,
-        fetching: false
-      }
-    case PRODUCT_RESET:
-      return { ...initialState, searchFilter: action.payload.searchFilter};
+        return { ...state, products: [...state.products, ...action.payload], fetching:false}
     case PRODUCT_ERROR:
-      return {...state, fetching:false}
+        return {...state, fetching:false}
     case PRODUCT_SET_CURRENT:
-      return {...state}
+        return {...state}
     default:
-      return state;
+        return state;
   }
 }
 

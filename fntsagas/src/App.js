@@ -71,7 +71,7 @@ function App() {
             <PrivateRoute path="/fiestas"  component={Fiestas}/>
               
 
-              <Route path="*" component={NotFound} />
+            <Route path="*" component={NotFound} />
           
         </AnimatedSwitch>
       </Splash>

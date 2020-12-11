@@ -17,7 +17,7 @@ const Menup = ()=>{
 
                     <button onClick={(e)=>{setRedirect("/productos")}}>CUMPLEAÑOS</button>
                     <button onClick={(e)=>{setRedirect("/lista")}}>EVENTOS</button>
-                    <button onClick={(e)=>{setRedirect("/lista")}}>FIESTAS</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>FIESTAS</button>
                     <button onClick={(e)=>{setRedirect("/lista")}}>ARREGLOS FLORALES</button>
            </section>
 
