@@ -3,23 +3,17 @@ import {Redirect} from 'react-router-dom';
 import { DeleteForever, MdPayment} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
+import {naxios} from '../../utlts/Axios';
 import "./carretilla.css";
+import {useStateContext } from '../../utlts/Context';
+import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
 
-const dummydata = [
-    {"_id":1, "label":"Nombre: Desayuno", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":1, "label":"Contenido 1", "count":1}
-];
 
 const Carretilla = ()=>{
 
-    const listElements = dummydata.map((o) =>{
+    const [{prods}, dispatch] = useStateContext();
+
+    const listElements = prods.products.map((o) =>{
     return (<li key={o._id}>
     <div><img src={logo} className="imgProduct"/></div>
     <div className="datosProduct">
@@ -35,6 +29,21 @@ const Carretilla = ()=>{
     <button><DeleteForever size="1.5em"/></button>
     </li>)
     })
+
+    useEffect(
+        ()=>{
+            dispatch({ type: PRODUCT_LOADING})
+            naxios.get('/api/carretilla/all')
+            .then(({data})=>{
+                dispatch({type:PRODUCT_LOADED, payload:data});
+                console.log(data);
+            })
+            .catch((ex)=>{
+                dispatch({ type: PRODUCT_ERROR});
+                console.log(ex)
+            });
+        }
+    );
 
     let[redirect,setRedirect]=useState("");
     if(redirect!==""){
