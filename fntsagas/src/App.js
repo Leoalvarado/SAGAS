@@ -61,7 +61,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Registro} />
 
-            <PrivateRoute path="/Menup"   component={Menup}/>
+            <PrivateRoute path="/Menup"   exact component={Menup}/>
             <PrivateRoute path="/productos"  component={ListProducts}/>
             <PrivateRoute path="/lista"  component={lista}/>
             <PrivateRoute path="/promo"  component={Promociones}/>
