@@ -15,10 +15,10 @@ const Menup = ()=>{
            <section className="menpsection">
                 <img src={logo} className="logoex"/>
 
-                    <button onClick={(e)=>{setRedirect("/productos")}}>CUMPLEAÑOS</button>
-                    <button onClick={(e)=>{setRedirect("/lista")}}>EVENTOS</button>
-                    <button onClick={(e)=>{setRedirect("/cumple")}}>FIESTAS</button>
-                    <button onClick={(e)=>{setRedirect("/lista")}}>ARREGLOS FLORALES</button>
+                    <button onClick={(e)=>{setRedirect("/cumple")}}>CUMPLEAÑOS</button>
+                    <button onClick={(e)=>{setRedirect("/eventos")}}>EVENTOS</button>
+                    <button onClick={(e)=>{setRedirect("/fiestas")}}>FIESTAS</button>
+                    <button onClick={(e)=>{setRedirect("/flores")}}>ARREGLOS FLORALES</button>
            </section>
 
         </Page>

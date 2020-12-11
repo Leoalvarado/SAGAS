@@ -5,11 +5,10 @@ const initialState = {
   products:[],
   total:0,
   currentPage:1,
-  pageLimit:6,
+  pageLimit:2,
   fetching:false,
   error:'',
   currentId:null,
-  searchFilter:''
 }
 
 export const PRODUCT_LOADING = "PRODUCT_LOADING";
