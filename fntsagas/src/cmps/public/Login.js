@@ -48,24 +48,23 @@ const Login = ()=>{
     }
         */
         
-        let { from } = location.state || { from: { pathname: "/" } };
-        const onLogin = (e)=>{
-            const { email, password} = form;
-            //call a model (axios)
-            dispatch({ type: LOGIN_FETCHING });
-            axios.post(
-            '/api/seguridad/login',
+       let { from } = location.state || { from: { pathname: "/Menup" } };
+       const onLogin = (e)=>{
+         const { email, password} = form;
+         //call a model (axios)
+         dispatch({ type: LOGIN_FETCHING });
+         axios.post(
+           '/api/seguridad/login',
             {email, password}
-            ).then(({data})=>{
-            dispatch({type:LOGIN_SUCCESS, payload:data});
-            setJWT(data.jwt);
-            routeHistory.replace(setRedirect("/Menup"));
-            }).catch((err)=>{
-            dispatch({ type: LOGIN_FETCHING_FAILED });
-            console.log(err);
-            alert("Credenciales No validas");
-            setRedirect("/");
-            })
+         ).then(({data})=>{
+           dispatch({type:LOGIN_SUCCESS, payload:data});
+           setJWT(data.jwt);
+           routeHistory.replace(from);
+         }).catch((err)=>{
+           dispatch({ type: LOGIN_FETCHING_FAILED });
+           alert("Credenciales no validas");
+           console.log(err);
+         })
         }
          return(
         <Page heading="Iniciar Sesion" footer2={true}>

@@ -1,0 +1,117 @@
+.listaCarretilla{
+    background: red;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100%;
+    margin: -1.5em 5em 36px -1em;
+    text-decoration: none;
+}
+
+.listShop{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    background-color: #e9dce4;
+    margin: 1em;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0px;
+    padding: 0;
+    list-style: none;
+}
+
+.listaCarretilla .listShop li{
+    display: flex;
+    flex-wrap: nowrap;
+    border-radius: 12px;
+    width: 90%;
+    margin-top: .2em;
+    border: 1px solid rgb(83, 12, 150);
+    background-color: rgba(255, 247, 247, 0.925);
+    box-shadow: 1px 1px 3px rgb(32, 32, 32);
+    height: 90px;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.imgProduct{
+    box-sizing: border-box;
+    height: 85px;
+    width: 85px;
+}
+
+.datosProduct{
+    display: flex;
+    flex-direction: column;
+      justify-content: center;
+    align-items: center;
+}
+
+.cantidadProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
+}
+
+.cantidadProduct button{
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9dce4;
+}
+
+.factura{
+    box-shadow:1px 1px 3px #000;
+    box-sizing: border-box;
+    background: white;
+    width: 100%;
+    height: 18%;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    margin-top: -8px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    position: fixed;
+    z-index: 3;
+    margin-top: -55%;
+}
+
+
+.Pagar{
+    background: #b44663;
+    min-width: 90%;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 3%;
+    height: 3em;
+}
+
+.datoFactura{
+    width: 50%;
+    height: auto;
+}
+
+li button{
+    width: 35px;
+    height: 35px;
+    border-radius: 20px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e9dce4;
+
+}

@@ -1,4 +1,3 @@
-//TODO: Import Reducers by Entity
 import appReducer from './reducers/app.reducer';
 import authReducer from './reducers/auth.reducer';
 import prodsReducer from './reducers/prods.reducer';
