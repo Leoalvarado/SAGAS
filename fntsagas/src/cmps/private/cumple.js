@@ -10,7 +10,6 @@ import {useStateContext } from '../../utlts/Context';
 import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
 
 
-<<<<<<< HEAD
 /*const dummydata = [
     {"_id":1, "label":"Contenido 1", "count":1},
     {"_id":2, "label":"Contenido 2", "count":1},
@@ -30,27 +29,12 @@ import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/stor
     {"_id":16, "label":"Contenido 16", "count":1},
 ];*/
 
-=======
->>>>>>> d31a26669e51a127669cccb7a508f23620702c2f
 const Cumple = ()=>{
 
     const [{prods}, dispatch] = useStateContext();
     const history = useHistory();
     const listElements = prods.products.map((o) =>{
-    return (
-        <li key={o._id}>
-            <div className="title">
-                {o.sku}
-            </div>
-            <b className="nombre"> 
-                {o.name}
-            </b>
-            <b className="precio">
-                {o.precio}
-            </b>
-            
-            <a className="buttom" href="#"><b>Add to Cart</b></a>
-        </li>)
+    return (<li key={o._id}>{o.sku} {o.name}<span>{o.precio}</span></li>)
     })
 
     useEffect(
@@ -74,11 +58,11 @@ const Cumple = ()=>{
     }
     return(
         <Page heading="Cumpleaños" footer={true}>
-           <section className="listasection"> 
+           <section className="listasection">
+                
                 <ul className="menuList">
                     {listElements}
                 </ul>
-                
            </section>
         <AddButton style={{position:"fixed", right:"1em", bottom:"6em"}}onClick={(e) => { history.push('/productos/nuevoProducto')}} >
             </AddButton>
