@@ -2,6 +2,8 @@
 
 import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+import { AddButton } from '../cmns/Buttons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import {paxios} from '../../utlts/Axios';  
@@ -13,7 +15,7 @@ import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/stor
 const Cumple = ()=>{
 
     const [{prods}, dispatch] = useStateContext();
-
+    const history = useHistory();
     const listElements = prods.products.map((o) =>{
     return (
         <li key={o._id}>
@@ -58,7 +60,8 @@ const Cumple = ()=>{
                 </ul>
                 
            </section>
-
+           <AddButton style={{position:"fixed", right:"1em", bottom:"6em"}}onClick={(e) => { history.push('/productos/nuevoProducto')}} >
+            </AddButton>
         </Page>
     )
 }
