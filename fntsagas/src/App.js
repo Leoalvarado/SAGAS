@@ -45,6 +45,7 @@ import Eventos from './cmps/private/eventos';
 import Cumple from './cmps/private/cumple';
 import Fiestas from './cmps/private/fiestas';
 import Carretilla from './cmps/private/carretilla';
+import NewProduct from './cmps/private/NewProductos';
 function App() {
   let appState = mainReducer();
   return (
@@ -62,7 +63,7 @@ function App() {
           <Route path="/register" exact component={Registro} />
 
             <PrivateRoute path="/Menup"   exact component={Menup}/>
-            <PrivateRoute path="/productos"  component={ListProducts}/>
+            <PrivateRoute path="/productos"  component={NewProduct}/>
             <PrivateRoute path="/lista"  component={lista}/>
             <PrivateRoute path="/promo"  component={Promociones}/>
 
