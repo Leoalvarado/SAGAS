@@ -15,11 +15,17 @@ const Fiestas = ()=>{
     const listElements = prods.products.map((o) =>{
     return (
         <li key={o._id}>
+            <div>
                 {o.sku}
+            </div>
+            <b> 
                 {o.name}
-            <span>
+            </b>
+            <b>
                 {o.precio}
-            </span>
+            </b>
+            
+            <a className="buttom" href="#"><b>Add to Cart</b></a>
         </li>)
     })
 
@@ -44,13 +50,26 @@ const Fiestas = ()=>{
     }
     return(
         <Page heading="Fiestas" footer={true}>
-           <section className="listasection"> 
-                <ul className="menuLi">
-                    {listElements}
-                </ul>
-                
-           </section>
-
+            <section className="listSec">
+                <div class="card estilo-c">
+                    <a href="#">
+                        <div class="img-container">
+                            <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="producto 1"></img>
+                            <span class="promo">15% de descuento</span>
+                        </div>
+                    </a>
+                    <div class="info-container">
+                        <h3>
+                            <ul className="menuLi">
+                                {listElements}
+                            </ul>
+                        </h3>
+                        <strong>$60</strong>
+                        <span class="rating">★★★★☆</span>
+                        <a href="#" class="add-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+            </section>
         </Page>
     )
 }
