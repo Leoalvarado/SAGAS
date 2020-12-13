@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
-import { DeleteForever, MdPayment} from '@material-ui/icons';
+import { DeleteForever, Payment} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import {naxios} from '../../utlts/Axios';
@@ -9,24 +9,29 @@ import {useStateContext } from '../../utlts/Context';
 import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
 
 
+
+
+
 const Carretilla = ()=>{
 
+    
+//esta linea posiblemente no valla porque va cuando se conecta con la db
     const [{prods}, dispatch] = useStateContext();
 
     const listElements = prods.products.map((o) =>{
-    return (<li key={o._id}>
+    return (<li key={o.id}>
     <div><img src={logo} className="imgProduct"/></div>
     <div className="datosProduct">
-        <div>{o.label}</div>
-        <div>{o.label}</div>
-        <div>{o.label}</div>
+        <div>{o.sku}</div>
+        <div>{o.name}</div>
+        <div>{o.price}</div>
     </div>
     <div className="cantidadProduct">
         <button>+</button>
-        {o.count}
+        <div>{o.cantidad}</div>
         <button>-</button>        
     </div>
-    <button><DeleteForever size="1.5em"/></button>
+    <button className="btnEliminar"><DeleteForever size="1.5em"/></button>
     </li>)
     })
 
@@ -42,7 +47,7 @@ const Carretilla = ()=>{
                 dispatch({ type: PRODUCT_ERROR});
                 console.log(ex)
             });
-        }
+        },[]
     );
 
     let[redirect,setRedirect]=useState("");
@@ -59,7 +64,7 @@ const Carretilla = ()=>{
                 <div className="factura">
                     <div className="datoFactura">Cantidad Productos: </div><div className="datoFactura">2</div>
                     <div className="datoFactura">Total Orden:</div><div className="datoFactura">Lps. 200.00</div> 
-                    <button className="Pagar">Pagar orden</button>
+                    <button className="Pagar">Pagar orden   <Payment font-size="small"/></button>
                 </div>
            </section>
 

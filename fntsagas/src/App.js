@@ -35,6 +35,8 @@ import Home from './cmps/public/Home';
 import Login from './cmps/public/Login';
 import Registro from './cmps/public/Registro';
 import Menup from './cmps/private/Menup';
+import MenuAdm from './cmps/private/MenuAdmin';
+import Eliminar from './cmps/private/eliminar';
 import lista from './cmps/private/lista';
 import Promociones from './cmps/private/promociones';
 import NotFound from './cmps/public/NotFound';
@@ -63,10 +65,11 @@ function App() {
           <Route path="/register" exact component={Registro} />
 
             <PrivateRoute path="/Menup"   exact component={Menup}/>
+            <PrivateRoute path="/MenuAdm"   exact component={MenuAdm}/>
             <PrivateRoute path="/productos"  component={NewProduct}/>
             <PrivateRoute path="/lista"  component={lista}/>
             <PrivateRoute path="/promo"  component={Promociones}/>
-
+            <PrivateRoute path="/delete"  component={Eliminar}/>
             <PrivateRoute path="/flores"  component={Flores}/>
             <PrivateRoute path="/cumple"  component={Cumple}/>
             <PrivateRoute path="/eventos"  component={Eventos}/>

@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
+import {Settings} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
 import "./Menup.css";
@@ -20,6 +21,10 @@ const Menup = ()=>{
                     <button onClick={(e)=>{setRedirect("/fiestas")}}>FIESTAS</button>
                     <button onClick={(e)=>{setRedirect("/flores")}}>ARREGLOS FLORALES</button>
            </section>
+
+           <div className="menuadm">
+               <button onClick={(e)=>{setRedirect("/MenuAdm")}}><Settings size="1.5em"></Settings></button>
+           </div>
 
         </Page>
     )

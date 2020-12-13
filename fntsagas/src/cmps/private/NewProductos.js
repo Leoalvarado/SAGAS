@@ -79,7 +79,7 @@ const NewProduct = ()=>{
         </section>
         <section>
           <PrimaryButton onClick={addNewProducto}>Agregar</PrimaryButton>
-          <SecondaryButton onClick={() => { history.push("/cumple") }}>Cancelar</SecondaryButton>
+          <SecondaryButton onClick={() => { history.push("/MenuAdm") }}>Cancelar</SecondaryButton>
         </section>
       </Page>
     );
