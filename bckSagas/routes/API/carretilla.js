@@ -4,9 +4,18 @@ const fs = require("fs");
 let productosArray = [];
 
 const writeToFile = ()=>{
-    fs.writeFileSync('carretilla.json', JSON.stringify(productosArray));
-  }
+    fs.writeFileSync('productos.json', JSON.stringify(productosArray));
+}
 
+const readFronFile = ()=>{
+    try{
+        let tmpJsonStr = fs.readFileSync('productos.json');
+        productosArray = JSON.parse(tmpJsonStr);
+    }catch(ex){
+        productosArray = [];
+    }
+}
+/*
 router.get('/all', (req, res)=>{
     try {
         let total = 0;
@@ -16,27 +25,36 @@ router.get('/all', (req, res)=>{
             total += parseFloat(o.price);
             cantidadProducts++;
         });     
+        readFronFile();
         res.status(200).json({productosArray, cantidadProducts, total});       
+    } catch (error) {
+        console.log(error);
+    }
+});*/
+
+router.get('/all', (req, res)=>{
+    res.status(200).json(productosArray);
+});
+
+router.post('/new', (req, res)=>{
+    try {
+        let total = 0;
+        let cantidadProducts = 0;
+        let cantidad = 1;
+        const {sku, name, price} = req.body;
+        const id = productosArray.length + 1;
+        productosArray.push({id, sku, name, cantidad, price});
+        productosArray.map( (o, i)=>{
+            total += parseFloat(o.price);
+            cantidadProducts++;
+        })    
+        writeToFile();
+        res.status(200).json({productosArray, cantidadProducts, total});    
     } catch (error) {
         console.log(error);
     }
 });
 
-
-
-router.post('/new', (req, res)=>{
-    let total = 0;
-    let cantidadProducts = 0;
-    let cantidad = 1;
-    const {sku, name, price} = req.body;
-    const id = productosArray.length + 1;
-    productosArray.push({id, sku, name, cantidad, price});
-    productosArray.map( (o, i)=>{
-        total += parseFloat(o.price);
-        cantidadProducts++;
-    })    
-    res.status(200).json({productosArray, cantidadProducts, total});
-});
 
 router.put('/addOne/:id', (req, res)=>{
     try {
@@ -87,7 +105,6 @@ router.put('/delOne/:id', (req, res)=>{
 router.delete('/del/:id', (req, res)=>{
     try {
         let {id} = req.params;
-        id = Number(id);
         let deleted = false;
         let carretilla = null;
         //let total = 0;
@@ -102,15 +119,14 @@ router.delete('/del/:id', (req, res)=>{
             }
         });
         productosArray = newCarretillaArray;
-        //writeToFile(); 
+        writeToFile(); 
         res.status(200).json({deleted, carretilla});
     } catch (error) {
         console.log(error);
-    }
-    
-   
-    
-});
+    } 
+}); 
+
+readFronFile();
 
 
 module.exports = router;
