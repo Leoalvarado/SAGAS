@@ -8,12 +8,28 @@ import {useStateContext } from '../../utlts/Context';
 import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
 
 
+
+
 const Eliminar = ()=>{
+
+
+    function deleter(iden){
+        paxios.delete("api/productos/eliminarProducto/"+iden)
+        .then(response=>{
+            
+            alert("Se elimino con exito");
+            window.location.reload();
+            
+        });
+    }        
+      
 
     const [{prods}, dispatch] = useStateContext();
 
     const listElements = prods.products.map((o) =>{
     return (
+
+       
         <li key={o._id}>
             <div>
                 {o.sku}
@@ -24,10 +40,11 @@ const Eliminar = ()=>{
             <b>
                 {o.precio}
             </b>
-            
-            <a className="buttom" href="#"><b>Eliminar</b></a>
+            <button onClick={()=>deleter(o._id)}> Eliminar </button>
         </li>)
     })
+
+   
 
     useEffect(
         ()=>{
@@ -44,11 +61,8 @@ const Eliminar = ()=>{
         },[]
             );
 
-            const Eliminar =(e)=> {
-                    //aqui pondre el axios.
-
-
-            }
+    
+    
 
     let[redirect,setRedirect]=useState("");
     if(redirect!==""){

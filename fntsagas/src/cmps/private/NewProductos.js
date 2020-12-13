@@ -10,7 +10,7 @@ import logo from "../public/img/SagasCreationLogo.png";
 import './NewProductos.css';
 const NewProduct = ()=>{
     const [, dispatch] = useStateContext();
-    const [form, setForm] = useState({sku:'',name:'',categoria:'',price:0, stock:0});
+    const [form, setForm] = useState({sku:'',name:'',categoria:'',precio:0, stock:0});
     const history = useHistory();
     const onChange = (e)=>{
       e.preventDefault();
@@ -64,11 +64,11 @@ const NewProduct = ()=>{
         />
         <Field
           type="number"
-          id="price"
+          id="precio"
           placeholder="Precio"
           onChange={onChange}
           caption="Precio"
-          value={form.price}
+          value={form.precio}
         />
         
         </section>
