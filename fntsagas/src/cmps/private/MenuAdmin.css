@@ -1,4 +1,4 @@
-.menpsection img{
+.menadmsection img{
     margin: 0;
     padding: 0px 0px 0px;
     width: 30%;
@@ -7,7 +7,7 @@
     top: -95px;
     display: flex;
 }
-.menpsection button{
+.menadmsection button{
     justify-content: center;
     margin: 0px;
     padding: 0px;
@@ -26,6 +26,4 @@
     margin: 1em;
     font-weight: bold;
 }
-
-
     
