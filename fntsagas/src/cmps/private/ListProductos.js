@@ -1,16 +1,18 @@
 import { useStateContext } from '../../utlts/Context';
 import { AddButton } from '../cmns/Buttons';
+import { useHistory } from 'react-router-dom';
 import Page from '../cmns/Page';
 import {paxios} from '../../utlts/Axios';
 import './ListProductos.css';
 import { useRef } from 'react';
-import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_RESET } from '../../utlts/store/reducers/prods.reducer';
+import {  PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_RESET } from '../../utlts/store/reducers/prods.reducer';
 import InfiniteScroll from 'react-infinite-scroller';
 import { IoIosSync } from 'react-icons/io';
 import Field from '../cmns/Field';
 
 const ListProductos = ()=>{
   const [{prods}, dispatch] = useStateContext();
+  const history = useHistory()
   const listElements = prods.products.map((o)=>{
     return (<div key={o._id}>{o.sku} {o.name} <span>{o.price}</span></div>);
   })
@@ -39,6 +41,7 @@ const ListProductos = ()=>{
             console.log(ex)
         }); //end paxios
       }
+      <h1>Hola</h1>
     };
   const scrollParentRef = useRef();
   return (
@@ -62,8 +65,8 @@ const ListProductos = ()=>{
         >
           {listElements}
         </InfiniteScroll>
-      </section>
-      <AddButton style={{position:"fixed", right:"1em", bottom:"6em"}}></AddButton>
+      </section>        
+        
     </Page>
   );
 }

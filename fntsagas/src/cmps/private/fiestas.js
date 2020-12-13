@@ -2,32 +2,47 @@ import {useState, useEffect} from 'react';
 import {Redirect} from 'react-router-dom';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
-import "./lista.css";
+import {paxios} from '../../utlts/Axios';  
+import "./fiestas.css";
+import {useStateContext } from '../../utlts/Context';
+import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
 
-const dummydata = [
-    {"_id":1, "label":"Contenido 1", "count":1},
-    {"_id":2, "label":"Contenido 2", "count":1},
-    {"_id":3, "label":"Contenido 3", "count":1},
-    {"_id":4, "label":"Contenido 4", "count":1},
-    {"_id":5, "label":"Contenido 5", "count":1},
-    {"_id":6, "label":"Contenido 6", "count":1},
-    {"_id":7, "label":"Contenido 7", "count":1},
-    {"_id":8, "label":"Contenido 8", "count":1},
-    {"_id":9, "label":"Contenido 9", "count":1},
-    {"_id":10, "label":"Contenido 10", "count":1},
-    {"_id":11, "label":"Contenido 11", "count":1},
-    {"_id":12, "label":"Contenido 12", "count":1},
-    {"_id":13, "label":"Contenido 13", "count":1},
-    {"_id":14, "label":"Contenido 14", "count":1},
-    {"_id":15, "label":"Contenido 15", "count":1},
-    {"_id":16, "label":"Contenido 16", "count":1},
-];
 
 const Fiestas = ()=>{
 
-    const listElements = dummydata.map((o) =>{
-    return (<li key={o._id}>{o.label}<span>{o.count}</span></li>)
+    const [{prods}, dispatch] = useStateContext();
+
+    const listElements = prods.products.map((o) =>{
+    return (
+        <li key={o._id}>
+            <div>
+                {o.sku}
+            </div>
+            <b> 
+                {o.name}
+            </b>
+            <b>
+                {o.precio}
+            </b>
+            
+            <a className="buttom" href="#"><b>Add to Cart</b></a>
+        </li>)
     })
+
+    useEffect(
+        ()=>{
+            dispatch({ type: PRODUCT_LOADING})
+            paxios.get('/api/productos/productosAll')
+            .then(({data})=>{
+                dispatch({type:PRODUCT_LOADED, payload:data});
+                console.log(data);
+            })
+            .catch((ex)=>{
+                dispatch({ type: PRODUCT_ERROR});
+                console.log(ex)
+            });
+        },[]
+            );
 
     let[redirect,setRedirect]=useState("");
     if(redirect!==""){
@@ -35,13 +50,26 @@ const Fiestas = ()=>{
     }
     return(
         <Page heading="Fiestas" footer={true}>
-           <section className="listasection">
-                
-                <ul className="menuList">
-                    {listElements}
-                </ul>
-           </section>
-
+            <section className="listSec">
+                <div class="card estilo-c">
+                    <a href="#">
+                        <div class="img-container">
+                            <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="producto 1"></img>
+                            <span class="promo">15% de descuento</span>
+                        </div>
+                    </a>
+                    <div class="info-container">
+                        <h3>
+                            <ul className="menuLi">
+                                {listElements}
+                            </ul>
+                        </h3>
+                        <strong>$60</strong>
+                        <span class="rating">★★★★☆</span>
+                        <a href="#" class="add-cart">Añadir al carrito</a>
+                    </div>
+                </div>
+            </section>
         </Page>
     )
 }

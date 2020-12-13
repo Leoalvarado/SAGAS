@@ -1,7 +1,11 @@
 button {
-  border: 1px Solid #303f9f;
+  border: 1px Solid rgba(148, 130, 172, 0.842);
   background-color: #fff;
   outline: none;
+  padding: 1em 1.5em;
+  border-radius: 27px;
+  font-weight: bold;
+  margin:1em 0.5em;
 }
 
 .btnround{
@@ -15,6 +19,16 @@ button {
 }
 
 .btnaccent{
-  background-color: #FF5722;
-  color:#FFF;
+  background-color:rgb(228, 25, 167);
+  color: rgba(254, 253, 255, 0.842);
+}
+
+.btnprimary{
+  background-color:rgb(228, 25, 167);
+  color: rgba(254, 253, 255, 0.842);
+}
+
+.btnsecondary{
+  background-color:rgb(228, 25, 167);
+  color: rgba(254, 253, 255, 0.842);
 }
