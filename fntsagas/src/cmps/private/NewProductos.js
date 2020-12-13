@@ -6,6 +6,7 @@ import Page from '../cmns/Page';
 import Field from '../cmns/Field';
 import { SecondaryButton, PrimaryButton } from '../cmns/Buttons';
 import { PRODUCT_RESET} from '../../utlts/store/reducers/prods.reducer';
+import logo from "../public/img/SagasCreationLogo.png";
 import './NewProductos.css';
 const NewProduct = ()=>{
     const [, dispatch] = useStateContext();
@@ -34,7 +35,8 @@ const NewProduct = ()=>{
         })
     }
     return (
-      <Page headding="Nuevo Producto">
+      <Page heading="Nuevo Producto" footer= {true}>
+      <img src={logo} className="logoex"/>
         <section className = "formulario">
         <Field
           type="text"
@@ -68,18 +70,11 @@ const NewProduct = ()=>{
           caption="Precio"
           value={form.price}
         />
-        <Field
-          type="number"
-          id="stock"
-          placeholder="Intentario"
-          onChange={onChange}
-          caption="Inventario"
-          value={form.stock}
-        />
+        
         </section>
-        <section>
-          <PrimaryButton onClick={addNewProducto}>Agregar</PrimaryButton>
-          <SecondaryButton onClick={() => { history.push("/MenuAdm") }}>Cancelar</SecondaryButton>
+        <section className= "botones">
+          <PrimaryButton  className= "btnaceptar" onClick={addNewProducto}>Agregar</PrimaryButton>
+          <SecondaryButton className= "btncancelar" onClick={() => { history.push("/MenuAdm") }}>Cancelar</SecondaryButton>
         </section>
       </Page>
     );
