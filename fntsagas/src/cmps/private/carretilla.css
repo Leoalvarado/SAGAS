@@ -16,7 +16,8 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin: 0px;
     padding: 0;
@@ -36,6 +37,7 @@
     justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
+    margin-left: 5%;
 }
 
 .imgProduct{
@@ -89,7 +91,10 @@
 
 
 .Pagar{
-    background: #b44663;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #3cb631;
     min-width: 90%;
     border-radius: 30px;
     border: none;
@@ -114,4 +119,9 @@ li button{
     align-items: center;
     background-color: #e9dce4;
 
+}
+
+.btnEliminar{
+    background-color: #c21a46;
+    color: white;
 }
