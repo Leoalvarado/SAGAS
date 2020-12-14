@@ -4,6 +4,7 @@ import {Link, useHistory, useLocation} from 'react-router-dom';
 import {AccountCircle, VpnKey} from '@material-ui/icons';
 import logo from "../public/img/SagasCreationLogo.png";
 import Page from '../cmns/Page';
+import {naxios} from '../../utlts/Axios';
 import "./Login.css";
 import { LOGIN_FETCHING, LOGIN_FETCHING_FAILED, LOGIN_SUCCESS } from '../../utlts/store/reducers/auth.reducer';
 import {naxios as axios, setJWT} from '../../utlts/Axios';
@@ -13,7 +14,6 @@ import {useStateContext} from '../../utlts/Context';
 const Login = ()=>{
     //const [email,setEmail]=useState("");
     //const [pswd,setPassword]=useState("");
-
         const [form,setForm]= useState({
 
             email:'',
@@ -47,6 +47,10 @@ const Login = ()=>{
             setRedirect("/Menu");
     }
         */
+       function cliente(x){
+        naxios.post('/api/carretilla/newCliente', {"cliente": x})
+        //setRedirect("/MenuAdm");
+    };
         
        let { from } = location.state || { from: { pathname: "/Menup" } };
        const onLogin = (e)=>{
@@ -56,10 +60,11 @@ const Login = ()=>{
          axios.post(
            '/api/seguridad/login',
             {email, password}
-         ).then(({data})=>{
+         ).then(({data})=>{ 
            dispatch({type:LOGIN_SUCCESS, payload:data});
            setJWT(data.jwt);
            routeHistory.replace(from);
+           cliente(email);
          }).catch((err)=>{
            dispatch({ type: LOGIN_FETCHING_FAILED });
            alert("Credenciales no validas");

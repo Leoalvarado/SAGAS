@@ -7,7 +7,7 @@ import {naxios} from '../../utlts/Axios';
 import "./carretilla.css";
 import {useStateContext } from '../../utlts/Context';
 import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
-
+import {naxios as axios, setJWT} from '../../utlts/Axios';
 
 const Carretilla = ()=>{    
     
@@ -38,6 +38,16 @@ const Carretilla = ()=>{
         });    
     window.location.reload();  
     }
+    
+    const totalFactura = prods.products.reduce((sum, o)=>{
+        sum += (parseFloat(o.price));
+        return sum;
+    }, 0);
+
+    const totalCantidadProducts = prods.products.reduce((sum, o)=>{
+        sum += (parseFloat(o.cantidad));
+        return sum;
+    }, 0);
 
     const listElements = prods.products.map((o) =>{
     return (<li key={o.id}>
@@ -46,7 +56,6 @@ const Carretilla = ()=>{
         <div id="sku">{o.sku}</div>
         <div id="name">{o.name}</div>
         <div id="price">{o.price}</div>
-        total({o.price});
     </div>
     <div className="cantidadProduct">
         <button onClick={()=>aumentarCantidad(o.id)}>+</button>
@@ -87,7 +96,33 @@ const Carretilla = ()=>{
         window.location.reload();            
         //setRedirect("/MenuAdm");
     }
-    
+
+    /*function correo(){
+        dispatch({ type: PRODUCT_LOADING})
+        naxios.get('/api/carretilla/allCliente')
+        .then(({data})=>{
+            dispatch({type:PRODUCT_LOADED, payload:data});
+            console.log(data);
+        })
+        .catch((ex)=>{
+            dispatch({ type: PRODUCT_ERROR});
+            console.log(ex)
+        });
+    };*/
+
+    const vender = (e)=>{
+        let fecha = new Date();
+        //alert(correo());
+        naxios.post('/api/ventas/nuevaVenta', {"date":(fecha.getDate()+"/"+fecha.getMonth()+"/"+fecha.getFullYear())})
+           /* .then(({data})=>{
+                dispatch({type:PRODUCT_LOADED, payload:data});
+                console.log(data);
+            })
+            .catch((ex)=>{
+                dispatch({ type: PRODUCT_ERROR});
+                console.log(ex)
+            });       */
+    };
 
     let[redirect,setRedirect]=useState("");
     if(redirect!==""){
@@ -101,9 +136,9 @@ const Carretilla = ()=>{
                     {listElements}
                 </ul>
                 <div className="factura">
-    <div className="datoFactura">Cantidad Productos: </div><div className="datoFactura">2</div>
-                    <div className="datoFactura">Total Orden:</div><div className="datoFactura"></div> 
-                    <button className="Pagar">Pagar orden  <Payment font-size="small"/></button>
+    <div className="datoFactura">Cantidad Productos: </div><div className="datoFactura">{totalCantidadProducts}</div>
+                    <div className="datoFactura">Total Orden:</div><div className="datoFactura">{totalFactura}</div> 
+                    <button className="Pagar" onClick={vender}>Pagar orden  <Payment font-size="small"/></button>
                     <button className="Cancelar" onClick={cancelar}>Cancelar orden  <Cancel font-size="small"/></button>
                 </div>
            </section>
