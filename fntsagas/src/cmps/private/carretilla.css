@@ -59,18 +59,24 @@
     justify-content: center;
     align-items: center;
     width: 85px;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .cantidadProduct button{
-    width: 25px;
-    height: 25px;
-    border-radius: 20px;
+    box-sizing: border-box;
+    width: 5px;
+    height: 30px;
+    border-radius: 35px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #e9dce4;
+    margin: 0em;
 }
+
+
 
 .factura{
     box-shadow:1px 1px 3px #000;
@@ -102,14 +108,34 @@
     font-weight: bold;
     margin-bottom: 3%;
     height: 3em;
+    margin-top: 0;
+    margin-bottom: 1%;
 }
-
+.Cancelar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c21a46;
+    min-width: 90%;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 3%;
+    height: 3em;
+    margin-top: 0;
+    margin-bottom: 1%;
+}
 .datoFactura{
     width: 50%;
     height: auto;
 }
 
-li button{
+
+
+.btnEliminar{
+    background-color: #c21a46;
+    color: white;
     width: 35px;
     height: 35px;
     border-radius: 20px;
@@ -117,11 +143,4 @@ li button{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #e9dce4;
-
-}
-
-.btnEliminar{
-    background-color: #c21a46;
-    color: white;
 }
