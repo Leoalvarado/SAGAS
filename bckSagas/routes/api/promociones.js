@@ -6,6 +6,7 @@ const mdbPromociones = new promocionesModel();
 
 //metodo para insertar una promocion
 router.get('/promosAll', async (req, res)=>{
+
     try {
         let rsltset = await mdbPromociones.getPromosAll();
         res.status(200).json(rsltset);
@@ -16,11 +17,14 @@ router.get('/promosAll', async (req, res)=>{
 }); 
 
 router.post('/promos', async (req, res)=>{
+ 
     try {
+        
         let {descripcion, tipoPromo, fechaInicial, fechaFinal} = req.body;
-       
         var rsltset = await mdbPromociones.addPromocion({descripcion, tipoPromo, fechaInicial, fechaFinal});
         res.status(200).json(rsltset);
+       // res.status(200).json(urlImg)    
+            
     } catch (ex) {
         console.log(ex);
         res.status(500).json({"msg":"Algo Paso Mal."});
