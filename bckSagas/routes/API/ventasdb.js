@@ -42,7 +42,7 @@ router.post('/nuevaVenta', async (req, res)=>{
         iva = Number(iva);
         descuento = Number(descuento);
         total = Number(total);
-        var rsltset = await mdbVentasModel.addVenta({date, cliente : {"idCliente": idCliente, "nombre": nombre, "correo": correo, "direccion": direccion}});
+        var rsltset = await mdbVentasModel.addVenta({date, cliente : {"idCliente": idCliente, "nombre": nombre, "correo": correo}});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);

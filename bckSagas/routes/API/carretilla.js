@@ -33,7 +33,30 @@ router.get('/all', (req, res)=>{
 });*/
 
 router.get('/all', (req, res)=>{
+    let total = 0;
+    let cantidadProducts = 0;
+    console.log(Object.entries(productosArray).length);
+    productosArray.map( (o, i)=>{
+        total += parseFloat(o.price);
+        cantidadProducts++;
+    });   
     res.status(200).json(productosArray);
+});
+
+router.get('/total' , (req, res)=>{
+    try {
+        let total = 0;
+        let cantidadProducts = 0;
+        console.log(Object.entries(productosArray).length);
+        productosArray.map( (o, i)=>{
+            total += parseFloat(o.price);
+            cantidadProducts++;
+        });     
+        readFronFile();
+        res.status(200).json({cantidadProducts, total});       
+    } catch (error) {
+        console.log(error);
+    }
 });
 
 router.post('/new', (req, res)=>{
@@ -42,6 +65,9 @@ router.post('/new', (req, res)=>{
         let cantidadProducts = 0;
         let cantidad = 1;
         const {sku, name, price} = req.body;
+        console.log(sku);
+        console.log(name);
+        console.log(price);
         const id = productosArray.length + 1;
         productosArray.push({id, sku, name, cantidad, price});
         productosArray.map( (o, i)=>{
@@ -61,18 +87,21 @@ router.put('/addOne/:id', (req, res)=>{
         let {id} = req.params;
         id = Number(id);
         let temporal = 0;
+        let modified = false;
+        let product = null;
         let newCarretillaArray = productosArray.map((o,i)=>{
-            if(o.id === id){
+            if(o.id == id){
+                console.log("Entro compa");
                 modified = true;
                 temporal = o.price / o.cantidad;
                 o.cantidad += 1;
                 o.price = (parseFloat(temporal) * parseFloat(o.cantidad));
                 product = o;
-                console.log(temporal);
             }
             return o;
         });
         productosArray = newCarretillaArray;
+        writeToFile();
         res.status(200).json({modified, product});    
     } catch (error) {
         console.log(error)
@@ -84,6 +113,8 @@ router.put('/delOne/:id', (req, res)=>{
         let {id} = req.params;
         id = Number(id);
         let temporal = 0;
+        let modified = false;
+        let product = null;
         let newCarretillaArray = productosArray.map((o,i)=>{
             if(o.id === id){
                 modified = true;
@@ -96,6 +127,7 @@ router.put('/delOne/:id', (req, res)=>{
             return o;
         });
         productosArray = newCarretillaArray;
+        writeToFile();
         res.status(200).json({modified, product});    
     } catch (error) {
         console.log(error)
@@ -121,6 +153,16 @@ router.delete('/del/:id', (req, res)=>{
         productosArray = newCarretillaArray;
         writeToFile(); 
         res.status(200).json({deleted, carretilla});
+    } catch (error) {
+        console.log(error);
+    } 
+}); 
+
+router.post('/delAll', (req, res)=>{
+    try {
+        productosArray = [];
+        writeToFile(); 
+        res.status(200).json(productosArray);
     } catch (error) {
         console.log(error);
     } 
