@@ -1,0 +1,22 @@
+.logoex{
+    margin: 0;
+    padding: 0px 0px 0px;
+    width: 70%;
+    position: relative;
+    left: 60px;
+    top: -50px;
+    display: flex;
+}
+
+.formulario{
+    position: relative;
+    left: 0;
+    top: -90px;
+
+}
+
+.botones{
+    position: relative;
+    left: 0;
+    top: -30px;   
+}

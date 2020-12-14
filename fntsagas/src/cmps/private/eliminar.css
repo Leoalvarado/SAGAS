@@ -1,170 +1,30 @@
-  
-/* .menuLi{
-    padding: 1em;
-    margin: -1em -1em 0px -1em;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    overflow-y: scroll;
-    justify-content: center;
-} */
-
-.menuLi li span{
-    display: flex;
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5em;
+table{
+  border-spacing: 0px;
+  width: 100%;
 }
 
-/* .menuLi li{
-    box-sizing: border-box;
-    padding: 0.5em;
-    margin: 0.25em;
-    flex-basis: 45%;
-    min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
-
-/* ----------------------------------------------------- */
-.estilo-c{
-    font-family: sans-serif;
-    width: 100%;
-  }
-  .estilo-c .img-container{
-    overflow: hidden;
-    height: 250px;
-    position: relative;
-    border-radius: 15px;
-    border: solid;
-  }
-  .estilo-c .img-container img{
-    width: 105%;
-    position: absolute;
-    top: -60%;
-    transition: all 0.5s;
-  }
-  .estilo-c:hover .img-container img{
-    transform: scale(1.2);
-  }
-  .estilo-c .img-container .promo{
-    position: absolute;
-    top: 10px;
-    left: 0;
-    font-size: 20px;
-    background: yellow;
-    padding: 15px;
-    color: black;
-    border-bottom-right-radius: 25px;
-    border-top-right-radius: 25px;
-  }
-  .estilo-c .info-container{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    margin: 5px;
-  }
-  .estilo-c .info-container h3{
-    margin: 0;
-  }
-  .estilo-c .info-container h3,
-  .estilo-c .info-container strong,
-  .estilo-c .info-container span{
-    padding: 5px 15px;
-    width: 100%;
-  }
-
-  .estilo-c .info-container .menuLi li{
-
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    justify-content: center;
-    margin: 5px;
-
-    box-sizing: border-box;
-    padding: 0.5em;
-    /* margin: 0.25em; */
-    flex-basis: 45%;
-    min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    /* display: flex; */
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .estilo-c .add-cart{
-    margin-top: 2px;
-    text-decoration: none;
-    color: white;
-    background-color: black;
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 25px;
-  }
-  .estilo-c .add-cart:hover{
-    color: black;
-    background-color: transparent;
-    border: 1px solid black;
-  }
- 
- 
- 
- /* ------------------------------------------------------ */
-/* 
-  .listasection img{
-    margin: 0;
-    padding: 0px 0px 0px;
-    width: 30%;
-    position: relative;
-    left: 140px;
-    top: -95px;
-    display: flex;
-}
-    
-.menuLi{
-    padding: 1em;
-    margin: -1em -1em 0px -1em;
-    background-color: #888;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    overflow-y: scroll;
-    justify-content: center;
+.table td, .table th{
+  padding: .75em;
+  vertical-align: top;
+  text-align: center;
+  border-top: 1px solid var(--border);
 }
 
- .listasection .menuLi li{
-    box-sizing: border-box;
-    padding: 0.5em;
-    margin: 0.25em;
-    flex-basis: 45%;
-    min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+.table td {
+  padding: .3em 1em;
+  font-size: 1.1em;
+  margin: 0 .2em;
 }
 
-.listasection .menuLi li span{
-    display: flex;
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 1px 1px 3px #000;
-    margin: 0.5em;
-}   */
+.table tr:hover{
+  background-color:#06d6a0 ;
+}
+
+.table .thead-dark th{
+  color: rgb(255, 255, 255);
+  background-color:rgba(57, 19, 107, 0.842) ;
+  border-color: rgb(57, 19, 107);
+}
+a{
+  color:  rgb(141, 15, 15);
+}
