@@ -38,11 +38,11 @@ router.get('/totalComprasCliente/:id', async (req, res)=>{
    
 router.post('/nuevaVenta', async (req, res)=>{
     try {
-        let { date, idCliente, nombre, correo, direccion} = req.body;
-        iva = Number(iva);
+        let { date} = req.body;
+        /*iva = Number(iva);
         descuento = Number(descuento);
-        total = Number(total);
-        var rsltset = await mdbVentasModel.addVenta({date, cliente : {"idCliente": idCliente, "nombre": nombre, "correo": correo}});
+        total = Number(total);*/
+        var rsltset = await mdbVentasModel.addVenta({"Fecha": date});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
@@ -53,9 +53,9 @@ router.post('/nuevaVenta', async (req, res)=>{
 router.put('/agregarProductoVenta/:id', async (req, res)=>{
     try {
         let { id } = req.params;
-        let { idProducto, sku, nombre, precio} = req.body;
+        let { sku, nombre, precio} = req.body;
         precio = Number(precio);
-        var rsltset = await mdbVentasModel.addProductoVenta(id, idProducto, sku, nombre, precio);
+        var rsltset = await mdbVentasModel.addProductoVenta(id, sku, nombre, precio);
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);

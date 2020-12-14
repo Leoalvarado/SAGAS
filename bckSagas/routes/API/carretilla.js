@@ -2,7 +2,7 @@ const express = require("express");
 let router = express.Router();
 const fs = require("fs");
 let productosArray = [];
-
+let clienteArray = []
 const writeToFile = ()=>{
     fs.writeFileSync('productos.json', JSON.stringify(productosArray));
 }
@@ -13,6 +13,19 @@ const readFronFile = ()=>{
         productosArray = JSON.parse(tmpJsonStr);
     }catch(ex){
         productosArray = [];
+    }
+}
+
+const writeToFileClient = ()=>{
+    fs.writeFileSync('cliente.json', JSON.stringify(clienteArray));
+}
+
+const readFronFileClient = ()=>{
+    try{
+        let tmpJsonStr = fs.readFileSync('cliente.json');
+        clienteArray = JSON.parse(tmpJsonStr);
+    }catch(ex){
+        clienteArray = [];
     }
 }
 /*
@@ -42,6 +55,9 @@ router.get('/all', (req, res)=>{
     });   
     res.status(200).json(productosArray);
 });
+
+
+
 
 router.get('/total' , (req, res)=>{
     try {
@@ -167,8 +183,33 @@ router.post('/delAll', (req, res)=>{
         console.log(error);
     } 
 }); 
+//-----------------------temporal 
+router.get('/allCliente', (req, res)=>{
+    res.status(200).json(clienteArray);
+});
+
+router.post('/newCliente', (req, res)=>{
+    try {
+        const {cliente} = req.body;
+        clienteArray.push({cliente});
+        writeToFileClient();
+        res.status(200).json({clienteArray});    
+    } catch (error) {
+        console.log(error);
+    }
+});
+
+router.post('/delCliente', (req, res)=>{
+    try {
+        clienteArray = [];
+        writeToFileClient(); 
+        res.status(200).json(clienteArray);
+    } catch (error) {
+        console.log(error);
+    } 
+});
 
 readFronFile();
-
+readFronFileClient();
 
 module.exports = router;
