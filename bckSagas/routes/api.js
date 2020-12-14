@@ -33,7 +33,7 @@ const promocionesRoutes = require('./api/promociones');
 const carretillaRoutes = require('./api/carretilla');
 
 router.use('/seguridad',seguridadRoutes);
-router.use('/ventas',jwtAuthMiddleware, ventasRoutes);
+router.use('/ventas', ventasRoutes);
 router.get('/heartbeat', jwtAuthMiddleware, heartBeat);
 router.use('/productos', productosRoutes);
 router.use('/promociones', jwtAuthMiddleware, promocionesRoutes);
