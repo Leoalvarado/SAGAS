@@ -4,13 +4,15 @@ import {paxios} from "../../utlts/Axios";
 import {useHistory} from "react-router-dom";
 import Page from '../cmns/Page';
 import Field from '../cmns/Field';
+import Form from '../cmns/Form';
 import { SecondaryButton, PrimaryButton } from '../cmns/Buttons';
 import { PRODUCT_RESET} from '../../utlts/store/reducers/prods.reducer';
 import logo from "../public/img/SagasCreationLogo.png";
 import './NewProductos.css';
+
 const NewProduct = ()=>{
     const [, dispatch] = useStateContext();
-    const [form, setForm] = useState({sku:'',name:'',categoria:'',precio:0, stock:0});
+    const [form, setForm] = useState({sku:'',name:'',categoria:'',precio:0, imagen:''});
     const history = useHistory();
     const onChange = (e)=>{
       e.preventDefault();
@@ -28,7 +30,7 @@ const NewProduct = ()=>{
           dispatch({ type: PRODUCT_RESET});
           history.push("/productos");
           alert("Producto Agregado Correctamente")
-        })
+           })
         .catch((ex)=>{
           console.log(ex);
           alert("Algo salio mál al ingresar");
@@ -69,6 +71,15 @@ const NewProduct = ()=>{
           onChange={onChange}
           caption="Precio"
           value={form.precio}
+        />
+        
+        <Form
+          id="imagen"
+          type="file"
+          placeholder="Selecione una Imagen"
+          onChange={onChange}
+          caption="Imagen"
+         value={form.imagen }
         />
         
         </section>

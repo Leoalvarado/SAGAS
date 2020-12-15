@@ -1,9 +1,12 @@
 const express = require("express");
 let router = express.Router();
+const storage = require('./multer') 
+const multer = require('multer')
 
 let productosModel = require('../../models/productos/productos.model');
 const mdbProductosModel = new productosModel();
 
+const uploader = multer({storage})
 
 router.get('/productoCategoria/:categoria', async (req, res)=>{
     try {
@@ -26,12 +29,19 @@ router.get('/productosAll', async (req, res)=>{
     }
 }); 
 
-router.post('/nuevoProducto', async (req, res)=>{
+router.post('/nuevoProducto', uploader.single('imagen'), async (req, res)=>{
     try {
+        const {file} = req;
+
         let {sku, name, categoria, precio, stock=0} = req.body;
         precio = Number(precio);
         stock = Number(stock);
-        var rsltset = await mdbProductosModel.addProducto({sku, name, categoria, precio});
+        let urlImg = req.file;
+        
+        if(file){
+            urlImg = `http://localhost:3000/public/${file.filename}`
+        }
+        var rsltset = await mdbProductosModel.addProducto({sku, name, categoria, precio,urlImg});
         res.status(200).json(rsltset);
     } catch (ex) {
         console.log(ex);
