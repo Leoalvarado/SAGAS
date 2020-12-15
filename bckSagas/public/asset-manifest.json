@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/static/css/main.43b1083b.chunk.css",
-    "main.js": "/static/js/main.5e6e9ae7.chunk.js",
-    "main.js.map": "/static/js/main.5e6e9ae7.chunk.js.map",
+    "main.css": "/static/css/main.2e07b82f.chunk.css",
+    "main.js": "/static/js/main.6e10b742.chunk.js",
+    "main.js.map": "/static/js/main.6e10b742.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.86f42e98.js",
     "runtime-main.js.map": "/static/js/runtime-main.86f42e98.js.map",
     "static/js/2.29c8a59c.chunk.js": "/static/js/2.29c8a59c.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.acc86732.chunk.js": "/static/js/3.acc86732.chunk.js",
     "static/js/3.acc86732.chunk.js.map": "/static/js/3.acc86732.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.43b1083b.chunk.css.map": "/static/css/main.43b1083b.chunk.css.map",
+    "static/css/main.2e07b82f.chunk.css.map": "/static/css/main.2e07b82f.chunk.css.map",
     "static/js/2.29c8a59c.chunk.js.LICENSE.txt": "/static/js/2.29c8a59c.chunk.js.LICENSE.txt",
     "static/media/SagasCreationLogo.e885692f.png": "/static/media/SagasCreationLogo.e885692f.png",
     "static/media/bannerApp.1135a93b.png": "/static/media/bannerApp.1135a93b.png",
@@ -28,7 +28,7 @@
   "entrypoints": [
     "static/js/runtime-main.86f42e98.js",
     "static/js/2.29c8a59c.chunk.js",
-    "static/css/main.43b1083b.chunk.css",
-    "static/js/main.5e6e9ae7.chunk.js"
+    "static/css/main.2e07b82f.chunk.css",
+    "static/js/main.6e10b742.chunk.js"
   ]
 }
