@@ -1,25 +1,13 @@
-.loginsectionb{
+.loginsection{
     width: 100%;
     align-self:center;
     justify-self: center;
+    margin-bottom: 5em;
+    margin-top: 55vh;
     height: 100vh;
-    display: flex;
 }
 
-.log{
-  width: 100%;
-  height: 100%;
-}
-
-.page{
-    padding: 0;
-    width: 100vw;
-}
-
-.login{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+.loginsection button{
     box-sizing: border-box;
     border: 1px solid rgb(83, 12, 150);
     background-color: rgba(255, 255, 255, 0.486);
@@ -28,26 +16,4 @@
     box-shadow: 1px 1px 3px #333;
     margin: 1em;
     font-weight: bold;
-    margin-bottom: 40%;
-    position: absolute;
-    bottom: -10%;
-    left: 10%;
-}
-
-.login2{
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    box-sizing: border-box;
-    border: 1px solid rgb(83, 12, 150);
-    background-color: rgba(255, 255, 255, 0.486);
-    border-radius: 12px;
-    padding:1em 2em;
-    box-shadow: 1px 1px 3px #333;
-    margin: 1em;
-    font-weight: bold;
-    margin-bottom: 40%;
-    position: absolute;
-    bottom: -10%;
-    right: 10%;
 }
