@@ -28,7 +28,7 @@ const Fiestas = ()=>{
     return (
         <li key={o._id}>
             <div class="img-container">
-                <img src={promo1}/>
+                <img src={o.urlImg}/>
                 <span class="promo">15% de descuento</span>
             </div>
             <div>
