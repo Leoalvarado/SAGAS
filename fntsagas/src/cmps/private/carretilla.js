@@ -97,6 +97,12 @@ const Carretilla = ()=>{
         //setRedirect("/MenuAdm");
     }
 
+    function pagar(e) {
+        alert('Pago realizado con exito.');
+        cancelar();
+    }
+    
+
     /*function correo(){
         dispatch({ type: PRODUCT_LOADING})
         naxios.get('/api/carretilla/allCliente')
@@ -138,7 +144,7 @@ const Carretilla = ()=>{
                 <div className="factura">
     <div className="datoFactura">Cantidad Productos: </div><div className="datoFactura">{totalCantidadProducts}</div>
                     <div className="datoFactura">Total Orden:</div><div className="datoFactura">{totalFactura}</div> 
-                    <button className="Pagar" onClick={vender}>Pagar orden  <Payment font-size="small"/></button>
+                    <button className="Pagar" onClick={pagar}>Pagar orden  <Payment font-size="small"/></button>
                     <button className="Cancelar" onClick={cancelar}>Cancelar orden  <Cancel font-size="small"/></button>
                 </div>
            </section>
