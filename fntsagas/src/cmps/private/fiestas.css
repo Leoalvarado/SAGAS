@@ -48,6 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background: linear-gradient(90deg, #6d1966 50%, #a3b635 50%); */
     /* background-size: cover;  */
   }
 
@@ -57,6 +58,7 @@
 
   .img-container{
     width: 100%;
+    
   }
 
   .estilo-c .img-container img{

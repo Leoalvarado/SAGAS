@@ -50,7 +50,7 @@ const Fiestas = ()=>{
     useEffect(
         ()=>{
             dispatch({ type: PRODUCT_LOADING})
-            paxios.get('/api/productos/productosAll')
+            paxios.get('/api/productos/productoCategoria/Fiestas')
             .then(({data})=>{
                 dispatch({type:PRODUCT_LOADED, payload:data});
                 console.log(data);

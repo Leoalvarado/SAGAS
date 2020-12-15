@@ -55,7 +55,7 @@ const Cumple = ()=>{
     useEffect(
         ()=>{
             dispatch({ type: PRODUCT_LOADING})
-            paxios.get('/api/productos/productosAll')  // ese ultimo pleca nos jala exclusivamente solo para cumple y es lo que debemos hacer!
+            paxios.get('/api/productos/productoCategoria/Cumpleaños')  
             .then(({data})=>{
                 dispatch({type:PRODUCT_LOADED, payload:data});
                 console.log(data);
