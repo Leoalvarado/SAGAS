@@ -7,6 +7,9 @@ import { JWT_INVALID } from '../../utlts/store/reducers/auth.reducer';
 import Page from '../cmns/Page';
 import { useHistory, useLocation } from 'react-router-dom';
 import logo from "../public/img/SagasCreationLogo.png";
+import bannerApp from "../public/img/bannerApp.png";
+
+
 const Splash = ({ children })=>{
   const [ {app, auth}, dispatch ] = useStateContext();
   const routeHistory = useHistory();
@@ -20,7 +23,7 @@ const Splash = ({ children })=>{
   if (!(app.initialized && app.minTimeElapsed )){
     return (
       <Page>
-          <img src={logo}/>
+          <img src={bannerApp}/>
         <h1>Loading ...</h1>
       </Page>
     )
