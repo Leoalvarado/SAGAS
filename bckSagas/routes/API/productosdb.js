@@ -29,7 +29,7 @@ router.get('/productosAll', async (req, res)=>{
     }
 }); 
 
-router.post('/nuevoProducto', uploader.single('imagen'), async (req, res)=>{
+router.post('/nuevoProducto', uploader.single('file'), async (req, res)=>{
     try {
         const {file} = req;
 
