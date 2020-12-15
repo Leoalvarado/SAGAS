@@ -6,6 +6,7 @@ import {naxios, paxios} from '../../utlts/Axios';
 import "./fiestas.css";
 import {useStateContext } from '../../utlts/Context';
 import { PRODUCT_ERROR, PRODUCT_LOADED, PRODUCT_LOADING } from '../../utlts/store/reducers/prods.reducer';
+import promo1 from "../public/img/promo1.png";
 
 
 const Fiestas = ()=>{
@@ -26,6 +27,10 @@ const Fiestas = ()=>{
     const listElements = prods.products.map((o) =>{
     return (
         <li key={o._id}>
+            <div class="img-container">
+                <img src={promo1}/>
+                <span class="promo">15% de descuento</span>
+            </div>
             <div>
                 {o.sku}
             </div>
@@ -33,17 +38,19 @@ const Fiestas = ()=>{
                 {o.name}
             </b>
             <b>
-                {o.precio}
+                ${o.precio}
             </b>
+            <span class="rating">★★★★☆</span>
+            <a href="#" class="add-cart" onClick={()=>addToCart( o.sku, o.name, o.precio)}>Añadir al carrito</a>
+            {/* <a className="buttom" onClick={()=>addToCart( o.sku, o.name, o.price)}><b>Add to Cart</b></a> */}
             
-            <a className="buttom" onClick={()=>addToCart( o.sku, o.name, o.price)}><b>Add to Cart</b></a>
         </li>)
     })
 
     useEffect(
         ()=>{
             dispatch({ type: PRODUCT_LOADING})
-            paxios.get('/api/productos/productosAll')
+            paxios.get('/api/productos/productoCategoria/Fiestas')
             .then(({data})=>{
                 dispatch({type:PRODUCT_LOADED, payload:data});
                 console.log(data);
@@ -63,21 +70,13 @@ const Fiestas = ()=>{
         <Page heading="Fiestas" footer={true}>
             <section className="listSec">
                 <div class="card estilo-c">
-                    <a href="#">
-                        <div class="img-container">
-                            <img src="https://images.pexels.com/photos/4465124/pexels-photo-4465124.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="producto 1"></img>
-                            <span class="promo">15% de descuento</span>
-                        </div>
-                    </a>
                     <div class="info-container">
                         <h3>
                             <ul className="menuLi">
                                 {listElements}
                             </ul>
                         </h3>
-                        <strong>$60</strong>
-                        <span class="rating">★★★★☆</span>
-                        <a href="#" class="add-cart">Añadir al carrito</a>
+                        
                     </div>
                 </div>
             </section>

@@ -1,0 +1,102 @@
+.menuLi li span{
+  display: flex;
+  width: 60px;
+  justify-content: center;
+  margin: 0.5em;
+}
+
+.estilo-c{
+  font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: solid; */
+}
+.estilo-c .img-container{
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ul{
+  padding-left: 0;
+}
+
+.img-container{
+  width: 100%; 
+}
+
+.estilo-c .img-container img{
+  width: 105%;
+  top: -60%;
+  transition: all 0.5s;
+}
+.estilo-c:hover .img-container img{
+  transform: scale(1.2);
+}
+.estilo-c .img-container .promo{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 20px;
+  margin-left: 0;
+  width: 60%;
+  background: yellow;
+  padding: 15px;
+  color: black;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.estilo-c .info-container{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+  
+}
+.estilo-c .info-container h3{
+  margin: 0;
+}
+.estilo-c .info-container h3,
+.estilo-c .info-container strong,
+.estilo-c .info-container span{
+  padding: 5px 15px;
+  width: 100%;
+}
+
+.estilo-c .info-container .menuLi li{
+
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  flex-basis: 45%;
+  min-height: 120px;
+  background: linear-gradient(60deg, rgba(57, 19, 107, 0.842) 30%, #d86a2b );
+  border: 2px solid rgb(141, 20, 115);
+  border-radius: 15px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.estilo-c .add-cart{
+  margin-top: 2px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
+}
+.estilo-c .add-cart:hover{
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
+}
