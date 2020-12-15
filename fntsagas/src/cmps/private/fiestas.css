@@ -13,9 +13,8 @@
 .menuLi li span{
     display: flex;
     width: 60px;
-    height: 60px;
+    /* height: 60px; */
     justify-content: center;
-    align-items: center;
     margin: 0.5em;
 }
 
@@ -37,17 +36,32 @@
 .estilo-c{
     font-family: sans-serif;
     width: 100%;
+    display: flex;
+    justify-content: center;
   }
   .estilo-c .img-container{
     overflow: hidden;
-    height: 250px;
+    height: 100%;
     position: relative;
     border-radius: 15px;
     border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-size: cover;  */
   }
+
+  ul{
+    padding-left: 0;
+  }
+
+  .img-container{
+    width: 100%;
+  }
+
   .estilo-c .img-container img{
     width: 105%;
-    position: absolute;
+    /* position: relative; */
     top: -60%;
     transition: all 0.5s;
   }
@@ -59,6 +73,8 @@
     top: 10px;
     left: 0;
     font-size: 20px;
+    margin-left: 0;
+    width: 60%;
     background: yellow;
     padding: 15px;
     color: black;
@@ -85,8 +101,7 @@
   .estilo-c .info-container .menuLi li{
 
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
     margin: 5px;
 
