@@ -91,7 +91,7 @@ const NewProduct = ({setImages, images})=>{
           <label>Precio:</label>
           <input className="categoria"
               type = "number"
-              placeholder = " asda"
+              placeholder = "0"
               onChange ={(e)=> setPrecio(e.target.value)} 
           />
           <br/>
