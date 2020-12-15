@@ -26,6 +26,7 @@ const heartBeat = (req, res)=>{
 }
 const jwtAuthMiddleware = passport.authenticate('jwt', {session:false});
 
+
 const seguridadRoutes = require('./api/seguridad');
 const ventasRoutes = require('./api/ventasdb');
 const productosRoutes = require('./api/productosdb');
