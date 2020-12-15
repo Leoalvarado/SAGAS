@@ -1,101 +1,102 @@
-
-.listasection img{
-    margin: 0;
-    padding: 0px 0px 0px;
-    width: 30%;
-    position: relative;
-    left: 140px;
-    top: -95px;
-    display: flex;
-}
-    
-
-/* Base */
-.menuList{
-    padding: 1em;
-    margin: -1em -1em 0px -1em;
-    background-color: #888;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    overflow-y: scroll;
-    justify-content: center;
+.menuLi li span{
+  display: flex;
+  width: 60px;
+  justify-content: center;
+  margin: 0.5em;
 }
 
-/* Caja */
- .listasection .menuList li{
-    display: grid;
-    grid-template-columns: 350px;
-    grid-template-rows: 35px 70px 40px;
-    border-radius: 25px;
-    background: linear-gradient(-50deg, #1c0769,  #741b8a);
-    box-shadow: 0px 10px 15px rgba(177, 167, 33, 0.5);
-    text-align: center;
-    min-height: 120px;
-    padding: 0.5em;
-    margin-left: 1px;
-    margin-bottom: 4px;
-    flex-basis: 45%;
-    justify-content: center;
-    align-items: center;
-    border: solid rgba(60, 170, 115, 0.849) 1px;
-    transition: all 0.5 ease;
-
+.estilo-c{
+  font-family: sans-serif;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* border: solid; */
+}
+.estilo-c .img-container{
+  overflow: hidden;
+  height: 100%;
+  position: relative;
+  border-radius: 15px;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.title{
-    color: white;
-    font-size: 25px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+ul{
+  padding-left: 0;
 }
 
-.nombre{
-    color: white;
-    font-size: 30px;
-    border: solid rgba(46, 49, 47, 0.849) 2px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    
+.img-container{
+  width: 100%; 
 }
 
-.precio{
-    color: white;
-    font-size: 30px;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
+.estilo-c .img-container img{
+  width: 105%;
+  top: -60%;
+  transition: all 0.5s;
+}
+.estilo-c:hover .img-container img{
+  transform: scale(1.2);
+}
+.estilo-c .img-container .promo{
+  position: absolute;
+  top: 10px;
+  left: 0;
+  font-size: 20px;
+  margin-left: 0;
+  width: 60%;
+  background: yellow;
+  padding: 15px;
+  color: black;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+}
+.estilo-c .info-container{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: center;
+  margin: 5px;
+  
+}
+.estilo-c .info-container h3{
+  margin: 0;
+}
+.estilo-c .info-container h3,
+.estilo-c .info-container strong,
+.estilo-c .info-container span{
+  padding: 5px 15px;
+  width: 100%;
 }
 
-/* Precio */
-.listasection .menuList li span{
-    display: flex;
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 1px 1px 3px #000;
-    margin: 0.5em;
+.estilo-c .info-container .menuLi li{
+
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  box-sizing: border-box;
+  padding: 0.5em;
+  flex-basis: 45%;
+  min-height: 120px;
+  background: linear-gradient(60deg, rgba(57, 19, 107, 0.842) 30%, #d86a2b );
+  border: 2px solid rgb(141, 20, 115);
+  border-radius: 15px;
+  align-items: center;
+  flex-direction: column;
 }
 
-/* Boton  */
-a.buttom {
-    display: inline-block;
-    margin-top: 2px;
-    padding: 10px 15px;
-    background: linear-gradient(40deg, #1c0769, #741b8a);
-    border-radius: 40px;
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-    color: white;
-    text-decoration: none;
-    font-size: 22px;
+.estilo-c .add-cart{
+  margin-top: 2px;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25px;
 }
-
-buttom:hover{
-    transform: scale(1.0);
+.estilo-c .add-cart:hover{
+  color: black;
+  background-color: transparent;
+  border: 1px solid black;
 }
-

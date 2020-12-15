@@ -1,53 +1,38 @@
-  
-/* .menuLi{
-    padding: 1em;
-    margin: -1em -1em 0px -1em;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    overflow-y: scroll;
-    justify-content: center;
-} */
-
 .menuLi li span{
     display: flex;
     width: 60px;
-    height: 60px;
     justify-content: center;
-    align-items: center;
     margin: 0.5em;
 }
 
-/* .menuLi li{
-    box-sizing: border-box;
-    padding: 0.5em;
-    margin: 0.25em;
-    flex-basis: 45%;
-    min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
-
-/* ----------------------------------------------------- */
 .estilo-c{
     font-family: sans-serif;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    /* border: solid; */
   }
   .estilo-c .img-container{
     overflow: hidden;
-    height: 250px;
+    height: 100%;
     position: relative;
     border-radius: 15px;
     border: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
+
+  ul{
+    padding-left: 0;
+  }
+
+  .img-container{
+    width: 100%; 
+  }
+
   .estilo-c .img-container img{
     width: 105%;
-    position: absolute;
     top: -60%;
     transition: all 0.5s;
   }
@@ -59,6 +44,8 @@
     top: 10px;
     left: 0;
     font-size: 20px;
+    margin-left: 0;
+    width: 60%;
     background: yellow;
     padding: 15px;
     color: black;
@@ -71,6 +58,7 @@
     text-align: center;
     justify-content: center;
     margin: 5px;
+    
   }
   .estilo-c .info-container h3{
     margin: 0;
@@ -85,20 +73,15 @@
   .estilo-c .info-container .menuLi li{
 
     display: flex;
-    flex-wrap: wrap;
-    text-align: center;
     justify-content: center;
     margin: 5px;
-
     box-sizing: border-box;
     padding: 0.5em;
-    /* margin: 0.25em; */
     flex-basis: 45%;
     min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    /* display: flex; */
-    /* justify-content: center; */
+    background: linear-gradient(60deg, rgba(57, 19, 107, 0.842) 30%, #d86a2b );
+    border: 2px solid rgb(141, 20, 115);
+    border-radius: 15px;
     align-items: center;
     flex-direction: column;
   }
@@ -117,54 +100,3 @@
     background-color: transparent;
     border: 1px solid black;
   }
- 
- 
- 
- /* ------------------------------------------------------ */
-/* 
-  .listasection img{
-    margin: 0;
-    padding: 0px 0px 0px;
-    width: 30%;
-    position: relative;
-    left: 140px;
-    top: -95px;
-    display: flex;
-}
-    
-.menuLi{
-    padding: 1em;
-    margin: -1em -1em 0px -1em;
-    background-color: #888;
-    flex: 1;
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    overflow-y: scroll;
-    justify-content: center;
-}
-
- .listasection .menuLi li{
-    box-sizing: border-box;
-    padding: 0.5em;
-    margin: 0.25em;
-    flex-basis: 45%;
-    min-height: 120px;
-    background-color: #fff;
-    border-bottom: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.listasection .menuLi li span{
-    display: flex;
-    width: 60px;
-    height: 60px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 1px 1px 3px #000;
-    margin: 0.5em;
-}   */

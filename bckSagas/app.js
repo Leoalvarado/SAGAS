@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api');
 
 
+
 var app = express();
 
 // view engine setup
@@ -22,11 +23,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(lessMiddleware(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public', express.static(`${__dirname}/public/img`));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/api', apiRouter);
 
+//Conf Atlas y Heroku
+app.get('/*', (req, res)=>{
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
