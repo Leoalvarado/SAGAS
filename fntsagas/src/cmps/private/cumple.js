@@ -45,7 +45,7 @@ const Cumple = ()=>{
                     ${o.precio}
                 </b>
                 <span class="rating">★★★★☆</span>
-                <a href="#" class="add-cart" onClick={()=>addToCart( o.sku, o.name, o.price)}>Añadir al carrito</a>
+                <a href="#" class="add-cart" onClick={()=>addToCart( o.sku, o.name, o.precio)}>Añadir al carrito</a>
                 {/* <a className="buttom" onClick={()=>addToCart( o.sku, o.name, o.price)}><b>Add to Cart</b></a> */}
                 
             </li>)
